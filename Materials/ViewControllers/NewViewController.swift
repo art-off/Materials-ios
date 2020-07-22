@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewViewController.swift
 //  Materials
 //
 //  Created by art-off on 22.07.2020.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        view.backgroundColor = Colors.backgroupd
     }
-
-
+    
 }
-
