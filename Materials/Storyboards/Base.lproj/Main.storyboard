@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Новое-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewViewController" customModule="Materials" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Новое" id="H8Z-fV-OZP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="-977.00892857142856"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="019-9b-hdK">
             <objects>
@@ -77,22 +61,6 @@
             </objects>
             <point key="canvasLocation" x="1976.8115942028987" y="1001.7857142857142"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="SWQ-gr-2PV">
-            <objects>
-                <viewController id="N2P-30-hjy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qrb-FQ-5re">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="f5v-H9-kVW"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="xpD-3V-avA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tFX-vn-d70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="-314.0625"/>
-        </scene>
         <!--Новое-->
         <scene sceneID="Xkw-5U-Amg">
             <objects>
@@ -105,12 +73,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kll-p9-mBL"/>
+                        <segue destination="O7F-sa-oBP" kind="relationship" relationship="rootViewController" id="pc0-je-vdQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9Z-Yc-Nb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="-977.00892857142856"/>
+        </scene>
+        <!--Новое-->
+        <scene sceneID="IVq-uk-14T">
+            <objects>
+                <tableViewController id="O7F-sa-oBP" customClass="NewTableViewController" customModule="Materials" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5bo-rq-D1c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fh6-b7-Z0V">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fh6-b7-Z0V" id="k6r-sa-xPG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O7F-sa-oBP" id="EA1-fv-sSb"/>
+                            <outlet property="delegate" destination="O7F-sa-oBP" id="Wiw-Mw-2B6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новое" id="TFa-rq-GBY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-tU-LYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="-977"/>
         </scene>
         <!--Информация-->
         <scene sceneID="f2J-yZ-Sl0">
@@ -118,18 +115,47 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="whl-8c-kJ6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Информация" image="folder_24pt" id="kfK-Dc-wY4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g9h-F6-LLX">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="g9h-F6-LLX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="N2P-30-hjy" kind="relationship" relationship="rootViewController" id="xA1-5z-QkX"/>
+                        <segue destination="hkB-KC-vfw" kind="relationship" relationship="rootViewController" id="gvC-IY-D6z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nt-EN-jmt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="-314.0625"/>
+        </scene>
+        <!--Информация-->
+        <scene sceneID="CVM-ew-wVU">
+            <objects>
+                <tableViewController id="hkB-KC-vfw" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LZs-2F-oJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4Hf-Sr-K0r">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Hf-Sr-K0r" id="tdT-2v-FNX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hkB-KC-vfw" id="pfi-Sd-VeM"/>
+                            <outlet property="delegate" destination="hkB-KC-vfw" id="cGv-bN-x2U"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Информация" id="6PU-UM-6GX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbw-LR-1lH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="-314"/>
         </scene>
         <!--Поиск-->
         <scene sceneID="he7-KW-R7G">
