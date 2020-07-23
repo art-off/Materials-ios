@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Поиск-->
         <scene sceneID="V2s-zp-7al">
             <objects>
                 <viewController id="Ube-XP-Mnb" sceneMemberID="viewController">
@@ -39,13 +39,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="h9C-So-GkY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Wiy-jy-jmz"/>
+                    <navigationItem key="navigationItem" title="Поиск" id="Wiy-jy-jmz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiM-Y3-cty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1976.8115942028987" y="339.50892857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Обо мне-->
         <scene sceneID="Vok-II-a7h">
             <objects>
                 <viewController id="wA3-Av-KBN" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="LzU-6Z-jLz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pvM-Fo-7kO"/>
+                    <navigationItem key="navigationItem" title="Обо мне" id="pvM-Fo-7kO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0a-bJ-PuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,7 +131,7 @@
         <!--Информация-->
         <scene sceneID="CVM-ew-wVU">
             <objects>
-                <tableViewController id="hkB-KC-vfw" sceneMemberID="viewController">
+                <tableViewController id="hkB-KC-vfw" customClass="InfoTableViewController" customModule="Materials" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LZs-2F-oJ8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,8 +163,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UdN-WS-gEy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Поиск" image="search_24pt" id="RlR-GI-wYl"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LOd-xN-dAO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="LOd-xN-dAO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -182,8 +182,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5MS-7P-PWk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Обо мне" image="person_24pt" id="K30-rr-XUS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aEb-VR-ctG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="aEb-VR-ctG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

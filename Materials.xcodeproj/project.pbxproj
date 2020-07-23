@@ -12,11 +12,8 @@
 		4A472CD524C8425A0089D812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD324C8425A0089D812 /* Main.storyboard */; };
 		4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD624C8425D0089D812 /* Assets.xcassets */; };
 		4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD824C8425D0089D812 /* LaunchScreen.storyboard */; };
-		4A472CE224C848C00089D812 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CE124C848C00089D812 /* NewViewController.swift */; };
 		4A472CE524C8492F0089D812 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CE424C8492F0089D812 /* Colors.swift */; };
 		4A472CEA24C854FD0089D812 /* UIView+addConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CE924C854FD0089D812 /* UIView+addConstraints.swift */; };
-		4A472CEF24C85B500089D812 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CEE24C85B500089D812 /* MaterialView.swift */; };
-		4A472CF124C860520089D812 /* MaterialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CF024C860520089D812 /* MaterialView.xib */; };
 		4A472CF324C86D330089D812 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CF224C86D320089D812 /* Common.swift */; };
 		4A472CF524C86DE30089D812 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CF424C86DE30089D812 /* Material.swift */; };
 		4A472CF724C8C0EE0089D812 /* NewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CF624C8C0EE0089D812 /* NewTableViewController.swift */; };
@@ -25,6 +22,7 @@
 		4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CFE24C9693D0089D812 /* MaterialsResponse.swift */; };
 		4A472D0224C9733C0089D812 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0124C9733C0089D812 /* API.swift */; };
 		4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0324C975DB0089D812 /* ApiManager.swift */; };
+		4A472D0624C97C310089D812 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0524C97C310089D812 /* InfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +33,8 @@
 		4A472CD624C8425D0089D812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A472CD924C8425D0089D812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A472CDB24C8425D0089D812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A472CE124C848C00089D812 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		4A472CE424C8492F0089D812 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4A472CE924C854FD0089D812 /* UIView+addConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addConstraints.swift"; sourceTree = "<group>"; };
-		4A472CEE24C85B500089D812 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
-		4A472CF024C860520089D812 /* MaterialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialView.xib; sourceTree = "<group>"; };
 		4A472CF224C86D320089D812 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		4A472CF424C86DE30089D812 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		4A472CF624C8C0EE0089D812 /* NewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +43,7 @@
 		4A472CFE24C9693D0089D812 /* MaterialsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsResponse.swift; sourceTree = "<group>"; };
 		4A472D0124C9733C0089D812 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4A472D0324C975DB0089D812 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		4A472D0524C97C310089D812 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +103,8 @@
 		4A472CE624C84E310089D812 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A472CE124C848C00089D812 /* NewViewController.swift */,
 				4A472CF624C8C0EE0089D812 /* NewTableViewController.swift */,
+				4A472D0524C97C310089D812 /* InfoTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,8 +129,6 @@
 		4A472CEB24C85A6E0089D812 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4A472CEE24C85B500089D812 /* MaterialView.swift */,
-				4A472CF024C860520089D812 /* MaterialView.xib */,
 				4A472CF824C8C43D0089D812 /* MaterialViewCell.swift */,
 				4A472CF924C8C43D0089D812 /* MaterialViewCell.xib */,
 			);
@@ -213,7 +207,6 @@
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,
-				4A472CF124C860520089D812 /* MaterialView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,11 +220,10 @@
 				4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */,
 				4A472CF524C86DE30089D812 /* Material.swift in Sources */,
 				4A472CFA24C8C43D0089D812 /* MaterialViewCell.swift in Sources */,
+				4A472D0624C97C310089D812 /* InfoTableViewController.swift in Sources */,
 				4A472CEA24C854FD0089D812 /* UIView+addConstraints.swift in Sources */,
 				4A472CF724C8C0EE0089D812 /* NewTableViewController.swift in Sources */,
-				4A472CE224C848C00089D812 /* NewViewController.swift in Sources */,
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
-				4A472CEF24C85B500089D812 /* MaterialView.swift in Sources */,
 				4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */,
 				4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */,
 				4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */,
