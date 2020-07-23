@@ -25,7 +25,14 @@ class NewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        materials = Common.getMaterials()
+        materials = []
+        
+        ApiManager.loadAllMaterials { materials in
+            DispatchQueue.main.async {
+                self.materials = materials
+                self.tableView.reloadData()
+            }
+        }
     }
 
 }
@@ -45,6 +52,9 @@ extension NewTableViewController {
         cell.name = material.name
         cell.section = material.section
         cell.date = material.date
+        
+        // отключаем выделение
+        cell.selectionStyle = .none
         
         return cell
     }

@@ -8,32 +8,41 @@
 
 import UIKit
 
-struct Material {
+class Material: Decodable {
     
-    let id: Int
-    let name: String
-    let section: String
-    let date: String
-    let files: Files
-    let keywords: [String]
-    let tests: [Test]
-    
-}
-
-struct Files {
-    
-    let doc: String
-    let add: [String]
+    var id: Int = 0
+    var name: String = ""
+    var section: String = ""
+    var date: String = ""
+    var files: Files = Files()
+    var keywords: [String] = []
+    var tests: [Test] = []
     
 }
 
-struct Test {
+class Files: Decodable {
     
-    let question: String
-    let answer1: String
-    let answer2: String
-    let answer3: String
-    let answer4: String
-    let correctAnswer: Int
+    var doc: String = ""
+    var add: [String] = []
+    
+}
+
+class Test: Decodable {
+    
+    var question: String = ""
+    var answer1: String = ""
+    var answer2: String = ""
+    var answer3: String = ""
+    var answer4: String = ""
+    var correctAnswer: Int = 0
+    
+    enum CodingKeys: String, CodingKey {
+        case question = "question"
+        case answer1 = "answer1"
+        case answer2 = "answer2"
+        case answer3 = "answer3"
+        case answer4 = "answer4"
+        case correctAnswer = "correct_answer"
+    }
     
 }
