@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NewTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var materials: [Material]!
+    var materials: Results<Material>!
     
     
     // MARK: - Overrides
@@ -19,20 +20,22 @@ class NewTableViewController: UITableViewController {
         super.loadView()
         
         tableView.backgroundColor = Colors.backgroupd
-        tableView.register(UINib(nibName: "MaterialViewCell", bundle: nil), forCellReuseIdentifier: MaterialViewCell.reuseIdentifier)
+        tableView.register(
+            UINib(nibName: "MaterialViewCell", bundle: nil),
+            forCellReuseIdentifier: MaterialViewCell.reuseIdentifier)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        materials = []
+        materials = MaterialHelper.getAllMaterials()
         
-        ApiManager.loadAllMaterials { materials in
-            DispatchQueue.main.async {
-                self.materials = materials
-                self.tableView.reloadData()
-            }
-        }
+//        ApiManager.loadAllMaterials { materials in
+//            DispatchQueue.main.async {
+//                self.materials = materials
+//                self.tableView.reloadData()
+// Ф           }
+//        }
     }
 
 }

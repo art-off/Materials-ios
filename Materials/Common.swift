@@ -13,7 +13,8 @@ class Common {
     static func getMaterial1() -> Material {
         let files = Files()
         files.doc = "1(0).docx"
-        files.add = ["1(1).jpg", "1(2).gif"]
+        files.add.append("1(1).jpg")
+        files.add.append("1(2).gif")
         
         let test1 = Test()
         test1.question = "1 вопрос"
@@ -37,7 +38,8 @@ class Common {
         material.section = "Техника безопасности"
         material.date = "2020-06-24"
         material.files = files
-        material.tests = [test1, test2]
+        material.tests.append(test1)
+        material.tests.append(test2)
         
         return material
     }
@@ -45,7 +47,7 @@ class Common {
     static func getMaterial2() -> Material {
         let files = Files()
         files.doc = "2(0).docx"
-        files.add = ["2(1).jpg"]
+        files.add.append("2(1).jpg")
         
         let test1 = Test()
         test1.question = "1 вопрос"
@@ -69,7 +71,8 @@ class Common {
         material.section = "Памятка"
         material.date = "2020-07-05"
         material.files = files
-        material.tests = [test1, test2]
+        material.tests.append(test1)
+        material.tests.append(test2)
 
         return material
     }
@@ -77,7 +80,7 @@ class Common {
     static func getMaterial3() -> Material {
         let files = Files()
         files.doc = "3(0).docx"
-        files.add = ["3(1).jpg"]
+        files.add.append("3(1).jpg")
         
         let test1 = Test()
         test1.question = "1 вопрос"
@@ -101,7 +104,8 @@ class Common {
         material.section = "Памятка"
         material.date = "2020-07-21"
         material.files = files
-        material.tests = [test1, test2]
+        material.tests.append(test1)
+        material.tests.append(test2)
 
         return material
     }
