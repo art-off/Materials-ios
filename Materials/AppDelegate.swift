@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
         
-        MaterialHelper.getMaterialsBySections()
+        //MaterialHelper.getMaterialsBySections()
         
         return true
     }

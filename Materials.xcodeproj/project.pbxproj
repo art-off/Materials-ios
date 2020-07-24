@@ -27,6 +27,10 @@
 		4A472D0824C984D80089D812 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0724C984D80089D812 /* DataManager.swift */; };
 		4A472D0C24C9EBD30089D812 /* Realm+CascadeDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0B24C9EBD30089D812 /* Realm+CascadeDeleting.swift */; };
 		4A472D0E24C9F53D0089D812 /* MaterialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */; };
+		4A472D1124CABFB20089D812 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0F24CABFB20089D812 /* SectionViewCell.swift */; };
+		4A472D1224CABFB20089D812 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1024CABFB20089D812 /* SectionViewCell.xib */; };
+		4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */; };
+		4A472D1624CACC020089D812 /* MaterialsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		4A472D0724C984D80089D812 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4A472D0B24C9EBD30089D812 /* Realm+CascadeDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+CascadeDeleting.swift"; sourceTree = "<group>"; };
 		4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialHelper.swift; sourceTree = "<group>"; };
+		4A472D0F24CABFB20089D812 /* SectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = "<group>"; };
+		4A472D1024CABFB20089D812 /* SectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = "<group>"; };
+		4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsTableViewController.swift; sourceTree = "<group>"; };
+		4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialsTableViewController.xib; sourceTree = "<group>"; };
 		DC9180CF77E51FC3F7CA11F0 /* Pods-Materials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.release.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.release.xcconfig"; sourceTree = "<group>"; };
 		E4889D491F3D3A938C6DA091 /* Pods-Materials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.debug.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +135,8 @@
 			children = (
 				4A472CF624C8C0EE0089D812 /* NewTableViewController.swift */,
 				4A472D0524C97C310089D812 /* InfoTableViewController.swift */,
+				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
+				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +163,8 @@
 			children = (
 				4A472CF824C8C43D0089D812 /* MaterialViewCell.swift */,
 				4A472CF924C8C43D0089D812 /* MaterialViewCell.xib */,
+				4A472D0F24CABFB20089D812 /* SectionViewCell.swift */,
+				4A472D1024CABFB20089D812 /* SectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,9 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A472D1624CACC020089D812 /* MaterialsTableViewController.xib in Resources */,
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
+				4A472D1224CABFB20089D812 /* SectionViewCell.xib in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A472D1124CABFB20089D812 /* SectionViewCell.swift in Sources */,
 				4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */,
 				4A472CF524C86DE30089D812 /* Material.swift in Sources */,
 				4A472CFA24C8C43D0089D812 /* MaterialViewCell.swift in Sources */,
@@ -317,6 +332,7 @@
 				4A472CEA24C854FD0089D812 /* UIView+addConstraints.swift in Sources */,
 				4A472CF724C8C0EE0089D812 /* NewTableViewController.swift in Sources */,
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
+				4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */,
 				4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */,
 				4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */,
 				4A472D0E24C9F53D0089D812 /* MaterialHelper.swift in Sources */,
