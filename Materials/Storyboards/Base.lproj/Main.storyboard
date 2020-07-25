@@ -29,22 +29,6 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
-        <!--Поиск-->
-        <scene sceneID="V2s-zp-7al">
-            <objects>
-                <viewController id="Ube-XP-Mnb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mEy-3S-Ivx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="h9C-So-GkY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Поиск" id="Wiy-jy-jmz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YiM-Y3-cty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="339.50892857142856"/>
-        </scene>
         <!--Обо мне-->
         <scene sceneID="Vok-II-a7h">
             <objects>
@@ -149,12 +133,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ube-XP-Mnb" kind="relationship" relationship="rootViewController" id="E8h-gj-rbI"/>
+                        <segue destination="U3w-YB-6om" kind="relationship" relationship="rootViewController" id="qj2-KS-ovX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Tg-EU-3z2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="339.50892857142856"/>
+        </scene>
+        <!--Поиск-->
+        <scene sceneID="cgG-ry-EvB">
+            <objects>
+                <tableViewController id="U3w-YB-6om" customClass="SearchTableViewController" customModule="Materials" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="81J-cR-Ebq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="U3w-YB-6om" id="VdA-f3-N5M"/>
+                            <outlet property="delegate" destination="U3w-YB-6om" id="loZ-iL-fcW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Поиск" id="5GO-Bu-pIc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qvs-G5-xht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="340"/>
         </scene>
         <!--Обо мне-->
         <scene sceneID="38j-L0-M8r">

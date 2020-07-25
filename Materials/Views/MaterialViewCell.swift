@@ -37,6 +37,8 @@ class MaterialViewCell: UITableViewCell {
         
         containerView.backgroundColor = .white
         containerView.layer.cornerRadius = 15
+        
+        selectionStyle = .none
     }
     
 }

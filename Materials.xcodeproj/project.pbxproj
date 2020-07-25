@@ -31,6 +31,7 @@
 		4A472D1224CABFB20089D812 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1024CABFB20089D812 /* SectionViewCell.xib */; };
 		4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */; };
 		4A472D1624CACC020089D812 /* MaterialsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */; };
+		4A472D1E24CAD77F0089D812 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D1D24CAD77F0089D812 /* SearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		4A472D1024CABFB20089D812 /* SectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = "<group>"; };
 		4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsTableViewController.swift; sourceTree = "<group>"; };
 		4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialsTableViewController.xib; sourceTree = "<group>"; };
+		4A472D1D24CAD77F0089D812 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DC9180CF77E51FC3F7CA11F0 /* Pods-Materials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.release.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.release.xcconfig"; sourceTree = "<group>"; };
 		E4889D491F3D3A938C6DA091 /* Pods-Materials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.debug.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,10 +135,11 @@
 		4A472CE624C84E310089D812 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A472CF624C8C0EE0089D812 /* NewTableViewController.swift */,
-				4A472D0524C97C310089D812 /* InfoTableViewController.swift */,
-				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
-				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
+				4A472D1C24CAD6B00089D812 /* General */,
+				4A472D1824CAD67E0089D812 /* New */,
+				4A472D1924CAD6850089D812 /* Info */,
+				4A472D1A24CAD68A0089D812 /* Search */,
+				4A472D1B24CAD6910089D812 /* AboutMe */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +198,46 @@
 				4A472D0B24C9EBD30089D812 /* Realm+CascadeDeleting.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A472D1824CAD67E0089D812 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				4A472CF624C8C0EE0089D812 /* NewTableViewController.swift */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		4A472D1924CAD6850089D812 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				4A472D0524C97C310089D812 /* InfoTableViewController.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		4A472D1A24CAD68A0089D812 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4A472D1D24CAD77F0089D812 /* SearchTableViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4A472D1B24CAD6910089D812 /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AboutMe;
+			sourceTree = "<group>";
+		};
+		4A472D1C24CAD6B00089D812 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
+				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		D1742551DDF47DA935FDE952 /* Pods */ = {
@@ -325,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A472D1124CABFB20089D812 /* SectionViewCell.swift in Sources */,
+				4A472D1E24CAD77F0089D812 /* SearchTableViewController.swift in Sources */,
 				4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */,
 				4A472CF524C86DE30089D812 /* Material.swift in Sources */,
 				4A472CFA24C8C43D0089D812 /* MaterialViewCell.swift in Sources */,

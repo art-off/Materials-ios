@@ -29,6 +29,8 @@ class SectionViewCell: UITableViewCell {
         
         conteinerView.backgroundColor = .white
         conteinerView.layer.cornerRadius = 15
+        
+        selectionStyle = .none
     }
     
 }
