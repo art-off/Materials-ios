@@ -12,6 +12,8 @@ struct API {
     
     static let address = "http://193.187.172.72/api"
     
+    static let key = "a609f4a1cb170982947f7de956376849"
+    
     // MARK: Взятие всех материалов
     static func allMaterials() -> URL {
         return URL(string: "\(address)/materials")!

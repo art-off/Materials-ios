@@ -19,15 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        ApiManager.loadAllMaterials { materials in
-//            if let materials = materials {
-//                DispatchQueue.main.async {
-//                    DataManager.shared.write(materials: materials)
-//                }
-//            }
+//        ApiManager.loadUser(withEmail: "tema2707@icloud.com", password: "1234") { user in
+//            guard let user = user else { return }
+//            print(user)
 //        }
-        
-        //MaterialHelper.getMaterialsBySections()
         
         return true
     }
