@@ -132,11 +132,11 @@
 		4A472CE324C8491F0089D812 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A8E21A524CE2A41008EA1F7 /* Style */,
 				4A472D0924C9EBA50089D812 /* DataManager */,
 				4A472D0024C96A080089D812 /* API */,
 				4A472CF424C86DE30089D812 /* Material.swift */,
 				4A5B003A24CCD06300786B9E /* User.swift */,
-				4A472CE424C8492F0089D812 /* Colors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,10 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				4A5B003C24CCD79F00786B9E /* Extensions */,
+				4A8E21A424CE2A0B008EA1F7 /* ResponseObjects */,
 				4A472D0124C9733C0089D812 /* API.swift */,
 				4A472D0324C975DB0089D812 /* ApiManager.swift */,
-				4A472CFE24C9693D0089D812 /* MaterialsResponse.swift */,
-				4A5B003824CCC97600786B9E /* UserResponse.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -258,6 +257,23 @@
 				4A5B003D24CCD7AF00786B9E /* String+md5.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A8E21A424CE2A0B008EA1F7 /* ResponseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				4A472CFE24C9693D0089D812 /* MaterialsResponse.swift */,
+				4A5B003824CCC97600786B9E /* UserResponse.swift */,
+			);
+			path = ResponseObjects;
+			sourceTree = "<group>";
+		};
+		4A8E21A524CE2A41008EA1F7 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				4A472CE424C8492F0089D812 /* Colors.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		D1742551DDF47DA935FDE952 /* Pods */ = {

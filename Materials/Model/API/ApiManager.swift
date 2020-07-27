@@ -37,7 +37,7 @@ class ApiManager {
         task.resume()
     }
     
-    static func loadUser(withEmail email: String, password: String, complition: @escaping (User?) -> Void) {
+    static func authUser(withEmail email: String, password: String, complition: @escaping (User?) -> Void) {
         let url = API.getUser()
         
         let parameters = [
@@ -47,7 +47,6 @@ class ApiManager {
         ]
         
         let boundary = "Boundary-\(UUID().uuidString)"
-        
         let httpBody = httpBodyForMultipart(withParameters: parameters, boundary: boundary)
         
         var request = URLRequest(url: url)
@@ -58,6 +57,7 @@ class ApiManager {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse,
                 (200..<300).contains(httpResponse.statusCode) else {
+                    // тут прописать если 403 (неверный логин или пароль) то дать другую ошибку
                     complition(nil)
                     return
             }
