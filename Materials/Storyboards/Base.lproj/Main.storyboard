@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,22 +27,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A31-ZC-Pvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
-        </scene>
-        <!--Обо мне-->
-        <scene sceneID="Vok-II-a7h">
-            <objects>
-                <viewController id="wA3-Av-KBN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gvB-2q-BSU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="LzU-6Z-jLz"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Обо мне" id="pvM-Fo-7kO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F0a-bJ-PuN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="1001.7857142857142"/>
         </scene>
         <!--Новое-->
         <scene sceneID="Xkw-5U-Amg">
@@ -171,12 +154,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wA3-Av-KBN" kind="relationship" relationship="rootViewController" id="MEX-mg-dRr"/>
+                        <segue destination="l9a-Cn-EIn" kind="relationship" relationship="rootViewController" id="PIQ-Gz-nQu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnU-f9-JPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="1001.7857142857142"/>
+        </scene>
+        <!--Обо мне-->
+        <scene sceneID="sW0-nT-a9T">
+            <objects>
+                <tableViewController id="l9a-Cn-EIn" customClass="AboutMeTableViewController" customModule="Materials" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UbN-E1-Nne">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="l9a-Cn-EIn" id="wah-Wm-gIi"/>
+                            <outlet property="delegate" destination="l9a-Cn-EIn" id="Gsx-PS-NkL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Обо мне" id="Klh-oD-PLK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hqc-th-pez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="1002"/>
         </scene>
     </scenes>
     <resources>

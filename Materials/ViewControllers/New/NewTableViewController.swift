@@ -29,13 +29,6 @@ class NewTableViewController: UITableViewController {
         super.viewDidLoad()
         
         materials = MaterialHelper.getAllMaterials()
-        
-//        ApiManager.loadAllMaterials { materials in
-//            DispatchQueue.main.async {
-//                self.materials = materials
-//                self.tableView.reloadData()
-// Ф           }
-//        }
     }
 
 }

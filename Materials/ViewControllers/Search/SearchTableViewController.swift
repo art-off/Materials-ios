@@ -56,7 +56,8 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        navigationItem.hidesSearchBarWhenScrolling = true
+        // чтобы не скрывался при скролинге
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     // MARK: - Table view data source

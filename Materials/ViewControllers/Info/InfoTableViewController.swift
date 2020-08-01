@@ -60,6 +60,7 @@ extension InfoTableViewController {
     
 }
 
+// MARK: - Table view delegate
 extension InfoTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

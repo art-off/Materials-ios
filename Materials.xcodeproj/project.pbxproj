@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A02FD57D5D1399081C6ECC2 /* Pods_Materials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */; };
+		4A104C6C24D55EDD00D5219A /* LogoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */; };
 		4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCD24C8425A0089D812 /* AppDelegate.swift */; };
 		4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCF24C8425A0089D812 /* SceneDelegate.swift */; };
 		4A472CD524C8425A0089D812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD324C8425A0089D812 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Materials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTableViewController.swift; sourceTree = "<group>"; };
 		4A472CCA24C8425A0089D812 /* Materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Materials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A472CCD24C8425A0089D812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A472CCF24C8425A0089D812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
 				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
+				4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				4A472CEA24C854FD0089D812 /* UIView+addConstraints.swift in Sources */,
 				4A5B003724CCC4EF00786B9E /* AboutMeTableViewController.swift in Sources */,
 				4A5B003924CCC97600786B9E /* UserResponse.swift in Sources */,
+				4A104C6C24D55EDD00D5219A /* LogoTableViewController.swift in Sources */,
 				4A472CF724C8C0EE0089D812 /* NewTableViewController.swift in Sources */,
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
 				4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */,
