@@ -12,7 +12,8 @@ import RealmSwift
 class NewTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var materials: Results<Material>!
+    var lastMonthMaterials: Results<Material>!
+    var notLastMonthMaterials: Results<Material>!
     
     
     // MARK: - Overrides
@@ -23,12 +24,16 @@ class NewTableViewController: UITableViewController {
         tableView.register(
             UINib(nibName: "MaterialViewCell", bundle: nil),
             forCellReuseIdentifier: MaterialViewCell.reuseIdentifier)
+        tableView.register(
+            CustomHeader.self,
+            forHeaderFooterViewReuseIdentifier: CustomHeader.reuseIdentifier)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        materials = MaterialHelper.getAllMaterials()
+        lastMonthMaterials = MaterialHelper.getLastMonthMaterials()
+        notLastMonthMaterials = MaterialHelper.getNotLastMonthMaterials()
     }
 
 }
@@ -37,14 +42,36 @@ class NewTableViewController: UITableViewController {
 // MARK: - Table view data source
 extension NewTableViewController {
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return materials.count
+        if section == 0 { return lastMonthMaterials.count }
+        else { return notLastMonthMaterials.count }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeader.reuseIdentifier) as! CustomHeader
+        
+        if section == 0 {
+            view.title = "За текущий месяц"
+        } else {
+            view.title = "Остальные"
+        }
+        
+        return view
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MaterialViewCell.reuseIdentifier, for: indexPath) as! MaterialViewCell
         
-        let material = materials[indexPath.row]
+        let material: Material
+        if indexPath.section == 0 {
+            material = lastMonthMaterials[indexPath.row]
+        } else {
+            material = notLastMonthMaterials[indexPath.row]
+        }
         cell.name = material.name
         cell.section = material.section
         cell.date = material.date

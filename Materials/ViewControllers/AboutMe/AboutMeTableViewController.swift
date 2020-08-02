@@ -40,7 +40,7 @@ class AboutMeTableViewController: LogoTableViewController {
         
         sections = [
             "Информация",
-            "Пройденные курсы"
+            "Пройденные материалы"
         ]
         
         user = UserHelpers.getCurrUser()
