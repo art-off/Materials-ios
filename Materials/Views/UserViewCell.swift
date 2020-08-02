@@ -17,11 +17,8 @@ class UserViewCell: UITableViewCell {
     var surname: String! {
         didSet { surnameLabel.text = surname }
     }
-    var name: String! {
-        didSet { nameLabel.text = name }
-    }
-    var patronymic: String! {
-        didSet { patronymicLabel.text = patronymic }
+    var nameAndPatronymic: String! {
+        didSet { nameAndPatronymicLabel.text = nameAndPatronymic}
     }
     var email: String! {
         didSet { emailLabel.text = "Почта: \(email!)" }
@@ -37,8 +34,7 @@ class UserViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var surnameLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var patronymicLabel: UILabel!
+    @IBOutlet weak var nameAndPatronymicLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var organizationLabel: UILabel!

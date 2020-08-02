@@ -13,7 +13,7 @@ class AboutMeTableViewController: LogoTableViewController {
     
     // MARK: - Properties
     var sections: [String]!
-    var user: User?
+    var user: User!
     var materials: [Material]!
     
     
@@ -80,12 +80,11 @@ extension AboutMeTableViewController {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: UserViewCell.reuseIdentifier, for: indexPath) as! UserViewCell
             
-            cell.surname = user?.surname
-            cell.name = user?.name
-            cell.patronymic = user?.patronymic
-            cell.email = user?.email
-            cell.organization = user?.organization
-            cell.position = user?.position
+            cell.surname = user.surname
+            cell.nameAndPatronymicLabel.text = "\(user.name) \(user.patronymic)"
+            cell.email = user.email
+            cell.organization = user.organization
+            cell.position = user.position
             
             return cell
         } else if indexPath.section == 1 {

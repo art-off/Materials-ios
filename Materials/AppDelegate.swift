@@ -34,10 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
         
-        MaterialHelper.getLastMonthMaterials()
-        MaterialHelper.getNotLastMonthMaterials()
-
-        
         return true
     }
 
