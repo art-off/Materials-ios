@@ -84,3 +84,28 @@ extension DataManager {
     }
     
 }
+
+// MARK: - User
+extension DataManager {
+    
+    // MARK: - Get
+    func getUsers() -> Results<User> {
+        let user = realm.objects(User.self)
+        return user
+    }
+    
+    // MARK: - Write
+    func write(user: User) {
+        try? realm.write {
+            realm.add(user, update: .all)
+        }
+    }
+    
+    // MARK: - Delete
+    func delete(user: User) {
+        try? realm.write {
+            realm.delete(user)
+        }
+    }
+    
+}

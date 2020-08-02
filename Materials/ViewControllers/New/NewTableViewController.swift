@@ -49,9 +49,6 @@ extension NewTableViewController {
         cell.section = material.section
         cell.date = material.date
         
-        // отключаем выделение
-        cell.selectionStyle = .none
-        
         return cell
     }
     

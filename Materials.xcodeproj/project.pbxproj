@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4A02FD57D5D1399081C6ECC2 /* Pods_Materials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */; };
 		4A104C6C24D55EDD00D5219A /* LogoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */; };
+		4A104C6F24D55FEF00D5219A /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C6D24D55FEF00D5219A /* UserViewCell.swift */; };
+		4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A104C6E24D55FEF00D5219A /* UserViewCell.xib */; };
+		4A104C7324D568FA00D5219A /* UserHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7224D568FA00D5219A /* UserHelpers.swift */; };
+		4A104C7524D58FEB00D5219A /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7424D58FEB00D5219A /* CustomHeader.swift */; };
+		4A104C7724D5D18700D5219A /* Material+newObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7624D5D18700D5219A /* Material+newObject.swift */; };
+		4A104C7A24D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */; };
 		4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCD24C8425A0089D812 /* AppDelegate.swift */; };
 		4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCF24C8425A0089D812 /* SceneDelegate.swift */; };
 		4A472CD524C8425A0089D812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD324C8425A0089D812 /* Main.storyboard */; };
@@ -42,6 +48,12 @@
 /* Begin PBXFileReference section */
 		3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Materials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTableViewController.swift; sourceTree = "<group>"; };
+		4A104C6D24D55FEF00D5219A /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
+		4A104C6E24D55FEF00D5219A /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
+		4A104C7224D568FA00D5219A /* UserHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelpers.swift; sourceTree = "<group>"; };
+		4A104C7424D58FEB00D5219A /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
+		4A104C7624D5D18700D5219A /* Material+newObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Material+newObject.swift"; sourceTree = "<group>"; };
+		4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+getCurrMonthNumber.swift"; sourceTree = "<group>"; };
 		4A472CCA24C8425A0089D812 /* Materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Materials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A472CCD24C8425A0089D812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A472CCF24C8425A0089D812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +108,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4A104C7124D568D400D5219A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4A104C7824D6A88C00D5219A /* Extensions */,
+				4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */,
+				4A104C7224D568FA00D5219A /* UserHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4A104C7824D6A88C00D5219A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4A472CC124C8425A0089D812 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +164,7 @@
 		4A472CE324C8491F0089D812 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A104C7124D568D400D5219A /* Helpers */,
 				4A8E21A524CE2A41008EA1F7 /* Style */,
 				4A472D0924C9EBA50089D812 /* DataManager */,
 				4A472D0024C96A080089D812 /* API */,
@@ -179,6 +210,9 @@
 				4A472CF924C8C43D0089D812 /* MaterialViewCell.xib */,
 				4A472D0F24CABFB20089D812 /* SectionViewCell.swift */,
 				4A472D1024CABFB20089D812 /* SectionViewCell.xib */,
+				4A104C6D24D55FEF00D5219A /* UserViewCell.swift */,
+				4A104C6E24D55FEF00D5219A /* UserViewCell.xib */,
+				4A104C7424D58FEB00D5219A /* CustomHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,7 +233,6 @@
 			children = (
 				4A472D0A24C9EBB50089D812 /* Extensions */,
 				4A472D0724C984D80089D812 /* DataManager.swift */,
-				4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -208,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				4A472D0B24C9EBD30089D812 /* Realm+CascadeDeleting.swift */,
+				4A104C7624D5D18700D5219A /* Material+newObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +386,7 @@
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
+				4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */,
 				4A472D1224CABFB20089D812 /* SectionViewCell.xib in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,
 			);
@@ -410,6 +445,8 @@
 				4A472D1E24CAD77F0089D812 /* SearchTableViewController.swift in Sources */,
 				4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */,
 				4A472CF524C86DE30089D812 /* Material.swift in Sources */,
+				4A104C7324D568FA00D5219A /* UserHelpers.swift in Sources */,
+				4A104C7A24D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift in Sources */,
 				4A472CFA24C8C43D0089D812 /* MaterialViewCell.swift in Sources */,
 				4A5B003E24CCD7AF00786B9E /* String+md5.swift in Sources */,
 				4A472D0624C97C310089D812 /* InfoTableViewController.swift in Sources */,
@@ -421,14 +458,17 @@
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
 				4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */,
 				4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */,
+				4A104C6F24D55FEF00D5219A /* UserViewCell.swift in Sources */,
 				4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */,
 				4A472D0E24C9F53D0089D812 /* MaterialHelper.swift in Sources */,
+				4A104C7724D5D18700D5219A /* Material+newObject.swift in Sources */,
 				4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */,
 				4A472D0C24C9EBD30089D812 /* Realm+CascadeDeleting.swift in Sources */,
 				4A472D0224C9733C0089D812 /* API.swift in Sources */,
 				4A472D0824C984D80089D812 /* DataManager.swift in Sources */,
 				4A472CF324C86D330089D812 /* Common.swift in Sources */,
 				4A5B003B24CCD06300786B9E /* User.swift in Sources */,
+				4A104C7524D58FEB00D5219A /* CustomHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

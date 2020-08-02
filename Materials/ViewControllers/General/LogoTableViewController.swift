@@ -22,6 +22,18 @@ class LogoTableViewController: UITableViewController {
         setupUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        showImage(false)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showImage(true)
+    }
+    
     // MARK: - Private methods
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -70,6 +82,12 @@ class LogoTableViewController: UITableViewController {
         imageView.transform = CGAffineTransform.identity
             .scaledBy(x: scale, y: scale)
             .translatedBy(x: xTranslation, y: yTranslation)
+    }
+    
+    private func showImage(_ show: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.imageView.alpha = show ? 1.0 : 0.0
+        }
     }
     
     // MARK: - Scroll View Delegate

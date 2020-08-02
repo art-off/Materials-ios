@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        ApiManager.authUser(withEmail: "tema2707@icloud.com", password: "1234") { user in
 //            guard let user = user else { return }
 //            print(user)
+//            DispatchQueue.main.async {
+//                DataManager.shared.write(user: user)
+//            }
 //        }
         
 //        ApiManager.loadAllMaterials { materials in
@@ -30,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                DataManager.shared.write(materials: materials)
 //            }
 //        }
+        
+        MaterialHelper.getLastMonthMaterials()
+        MaterialHelper.getNotLastMonthMaterials()
+
         
         return true
     }
