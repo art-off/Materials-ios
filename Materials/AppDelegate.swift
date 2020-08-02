@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            guard let user = user else { return }
 //            print(user)
 //            DispatchQueue.main.async {
-//                DataManager.shared.write(user: user)
+//                UserHelpers.authUser(user: user)
 //            }
 //        }
         

@@ -43,7 +43,7 @@ class UserViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        containerView.backgroundColor = .white
+        containerView.backgroundColor = Colors.transneftBlue
         containerView.layer.cornerRadius = 15
         
         selectionStyle = .none
