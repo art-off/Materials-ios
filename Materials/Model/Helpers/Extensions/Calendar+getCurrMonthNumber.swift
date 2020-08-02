@@ -22,4 +22,9 @@ extension Calendar {
         return stringMonthNumber
     }
     
+    func getCurrYearNumber() -> String {
+        let yearNumber = Calendar.current.component(.year, from: Date())
+        return String(yearNumber)
+    }
+    
 }

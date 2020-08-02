@@ -18,22 +18,22 @@ class MaterialHelper {
     // MARK: Получение материалов последнего месяца
     static func getLastMonthMaterials() -> Results<Material> {
         let monthNumber = Calendar.current.getCurrMonthNumber()
+        let yearNumber = Calendar.current.getCurrYearNumber()
         
         // берем материалы только текущего месяца
-        let materials = getAllMaterials().filter("date CONTAINS[c] '-\(monthNumber)-'")
+        let materials = getAllMaterials().filter("date CONTAINS[c] '\(yearNumber)-\(monthNumber)-'")
         
-        print(materials)
         return materials
     }
     
     // MARK: Получение всех материалов, кроме последнего месяца
     static func getNotLastMonthMaterials() -> Results<Material> {
         let monthNumber = Calendar.current.getCurrMonthNumber()
+        let yearNumber = Calendar.current.getCurrYearNumber()
         
         // берем все материалы, кроме текущего месяца
-        let materials = getAllMaterials().filter("NOT date CONTAINS[c] '-\(monthNumber)-'")
+        let materials = getAllMaterials().filter("NOT date CONTAINS[c] '\(yearNumber)-\(monthNumber)-'")
         
-        print(materials)
         return materials
     }
     
