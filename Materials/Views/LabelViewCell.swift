@@ -8,20 +8,20 @@
 
 import UIKit
 
-class SectionViewCell: UITableViewCell {
+class LabelViewCell: UITableViewCell {
     
     // MARK: Reuse ID
-    static let reuseIdentifier = "SectionCell"
+    static let reuseIdentifier = "LabelCell"
     
     // MARK: - Properties
-    var section: String! {
-        didSet { sectionLabel.text = section }
+    var textInConteiner: String! {
+        didSet { textInConteinerLabel.text = textInConteiner }
     }
     
     // MARK: - Outlets
     @IBOutlet weak var conteinerView: UIView!
     
-    @IBOutlet weak var sectionLabel: UILabel!
+    @IBOutlet weak var textInConteinerLabel: UILabel!
     
     // MARK: - Overrides
     override func awakeFromNib() {

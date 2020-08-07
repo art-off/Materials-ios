@@ -15,6 +15,8 @@
 		4A104C7524D58FEB00D5219A /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7424D58FEB00D5219A /* CustomHeader.swift */; };
 		4A104C7724D5D18700D5219A /* Material+newObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7624D5D18700D5219A /* Material+newObject.swift */; };
 		4A104C7A24D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */; };
+		4A104C7D24DD5AF500D5219A /* DetailMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */; };
+		4A104C7E24DD5AF500D5219A /* DetailMaterialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A104C7C24DD5AF500D5219A /* DetailMaterialViewController.xib */; };
 		4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCD24C8425A0089D812 /* AppDelegate.swift */; };
 		4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCF24C8425A0089D812 /* SceneDelegate.swift */; };
 		4A472CD524C8425A0089D812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD324C8425A0089D812 /* Main.storyboard */; };
@@ -34,8 +36,8 @@
 		4A472D0824C984D80089D812 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0724C984D80089D812 /* DataManager.swift */; };
 		4A472D0C24C9EBD30089D812 /* Realm+CascadeDeleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0B24C9EBD30089D812 /* Realm+CascadeDeleting.swift */; };
 		4A472D0E24C9F53D0089D812 /* MaterialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */; };
-		4A472D1124CABFB20089D812 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0F24CABFB20089D812 /* SectionViewCell.swift */; };
-		4A472D1224CABFB20089D812 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1024CABFB20089D812 /* SectionViewCell.xib */; };
+		4A472D1124CABFB20089D812 /* LabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D0F24CABFB20089D812 /* LabelViewCell.swift */; };
+		4A472D1224CABFB20089D812 /* LabelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1024CABFB20089D812 /* LabelViewCell.xib */; };
 		4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */; };
 		4A472D1624CACC020089D812 /* MaterialsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */; };
 		4A472D1E24CAD77F0089D812 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472D1D24CAD77F0089D812 /* SearchTableViewController.swift */; };
@@ -54,6 +56,8 @@
 		4A104C7424D58FEB00D5219A /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
 		4A104C7624D5D18700D5219A /* Material+newObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Material+newObject.swift"; sourceTree = "<group>"; };
 		4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+getCurrMonthNumber.swift"; sourceTree = "<group>"; };
+		4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMaterialViewController.swift; sourceTree = "<group>"; };
+		4A104C7C24DD5AF500D5219A /* DetailMaterialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMaterialViewController.xib; sourceTree = "<group>"; };
 		4A472CCA24C8425A0089D812 /* Materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Materials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A472CCD24C8425A0089D812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A472CCF24C8425A0089D812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,8 +79,8 @@
 		4A472D0724C984D80089D812 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4A472D0B24C9EBD30089D812 /* Realm+CascadeDeleting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+CascadeDeleting.swift"; sourceTree = "<group>"; };
 		4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialHelper.swift; sourceTree = "<group>"; };
-		4A472D0F24CABFB20089D812 /* SectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = "<group>"; };
-		4A472D1024CABFB20089D812 /* SectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = "<group>"; };
+		4A472D0F24CABFB20089D812 /* LabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewCell.swift; sourceTree = "<group>"; };
+		4A472D1024CABFB20089D812 /* LabelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewCell.xib; sourceTree = "<group>"; };
 		4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsTableViewController.swift; sourceTree = "<group>"; };
 		4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialsTableViewController.xib; sourceTree = "<group>"; };
 		4A472D1D24CAD77F0089D812 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -208,8 +212,8 @@
 			children = (
 				4A472CF824C8C43D0089D812 /* MaterialViewCell.swift */,
 				4A472CF924C8C43D0089D812 /* MaterialViewCell.xib */,
-				4A472D0F24CABFB20089D812 /* SectionViewCell.swift */,
-				4A472D1024CABFB20089D812 /* SectionViewCell.xib */,
+				4A472D0F24CABFB20089D812 /* LabelViewCell.swift */,
+				4A472D1024CABFB20089D812 /* LabelViewCell.xib */,
 				4A104C6D24D55FEF00D5219A /* UserViewCell.swift */,
 				4A104C6E24D55FEF00D5219A /* UserViewCell.xib */,
 				4A104C7424D58FEB00D5219A /* CustomHeader.swift */,
@@ -281,9 +285,11 @@
 		4A472D1C24CAD6B00089D812 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */,
 				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
 				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
-				4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */,
+				4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */,
+				4A104C7C24DD5AF500D5219A /* DetailMaterialViewController.xib */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -386,8 +392,9 @@
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
+				4A104C7E24DD5AF500D5219A /* DetailMaterialViewController.xib in Resources */,
 				4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */,
-				4A472D1224CABFB20089D812 /* SectionViewCell.xib in Resources */,
+				4A472D1224CABFB20089D812 /* LabelViewCell.xib in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A472D1124CABFB20089D812 /* SectionViewCell.swift in Sources */,
+				4A472D1124CABFB20089D812 /* LabelViewCell.swift in Sources */,
 				4A472D1E24CAD77F0089D812 /* SearchTableViewController.swift in Sources */,
 				4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */,
 				4A472CF524C86DE30089D812 /* Material.swift in Sources */,
@@ -450,6 +457,7 @@
 				4A472CFA24C8C43D0089D812 /* MaterialViewCell.swift in Sources */,
 				4A5B003E24CCD7AF00786B9E /* String+md5.swift in Sources */,
 				4A472D0624C97C310089D812 /* InfoTableViewController.swift in Sources */,
+				4A104C7D24DD5AF500D5219A /* DetailMaterialViewController.swift in Sources */,
 				4A472CEA24C854FD0089D812 /* UIView+addConstraints.swift in Sources */,
 				4A5B003724CCC4EF00786B9E /* AboutMeTableViewController.swift in Sources */,
 				4A5B003924CCC97600786B9E /* UserResponse.swift in Sources */,

@@ -22,6 +22,9 @@ class NewTableViewController: UITableViewController {
         
         tableView.backgroundColor = Colors.backgroupd
         tableView.register(
+            UINib(nibName: "LabelViewCell", bundle: nil),
+            forCellReuseIdentifier: LabelViewCell.reuseIdentifier)
+        tableView.register(
             UINib(nibName: "MaterialViewCell", bundle: nil),
             forCellReuseIdentifier: MaterialViewCell.reuseIdentifier)
         tableView.register(
@@ -46,11 +49,6 @@ extension NewTableViewController {
         return 2
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return lastMonthMaterials.count }
-        else { return notLastMonthMaterials.count }
-    }
-    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeader.reuseIdentifier) as! CustomHeader
         
@@ -63,11 +61,26 @@ extension NewTableViewController {
         return view
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            if lastMonthMaterials.isEmpty { return 1 }
+            return lastMonthMaterials.count
+        }
+        else { return notLastMonthMaterials.count }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MaterialViewCell.reuseIdentifier, for: indexPath) as! MaterialViewCell
         
         let material: Material
         if indexPath.section == 0 {
+            if lastMonthMaterials.isEmpty {
+                let labelCell = tableView.dequeueReusableCell(withIdentifier: LabelViewCell.reuseIdentifier, for: indexPath) as! LabelViewCell
+                labelCell.textInConteiner = "В текущем месяце не было материалов"
+                labelCell.textInConteinerLabel.textColor = .gray
+                return labelCell
+            }
+            
             material = lastMonthMaterials[indexPath.row]
         } else {
             material = notLastMonthMaterials[indexPath.row]

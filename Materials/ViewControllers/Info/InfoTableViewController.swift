@@ -22,8 +22,8 @@ class InfoTableViewController: UITableViewController {
         
         tableView.backgroundColor = Colors.backgroupd
         tableView.register(
-            UINib(nibName: "SectionViewCell", bundle: nil),
-            forCellReuseIdentifier: SectionViewCell.reuseIdentifier)
+            UINib(nibName: "LabelViewCell", bundle: nil),
+            forCellReuseIdentifier: LabelViewCell.reuseIdentifier)
     }
     
     override func viewDidLoad() {
@@ -47,10 +47,10 @@ extension InfoTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SectionViewCell.reuseIdentifier, for: indexPath) as! SectionViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LabelViewCell.reuseIdentifier, for: indexPath) as! LabelViewCell
         
         let section = sections[indexPath.row]
-        cell.section = section
+        cell.textInConteiner = section
         
         // отключаем выделение
         cell.selectionStyle = .none
