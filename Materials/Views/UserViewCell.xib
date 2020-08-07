@@ -27,25 +27,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Имя" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-1Z-Szg">
-                                <rect key="frame" x="12" y="46.5" width="333" height="26.5"/>
+                                <rect key="frame" x="12" y="40.5" width="333" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Почта: тутпочта" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-sY-Vxi">
-                                <rect key="frame" x="12" y="85" width="333" height="20.5"/>
+                                <rect key="frame" x="12" y="79" width="333" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Должность: тутдолжность" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-jM-COd">
-                                <rect key="frame" x="12" y="113.5" width="333" height="20.5"/>
+                                <rect key="frame" x="12" y="107.5" width="333" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Организация: туторганизация" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwe-MD-Wu2">
-                                <rect key="frame" x="12" y="142" width="333" height="108"/>
+                                <rect key="frame" x="12" y="136" width="333" height="114"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Nie-sY-Vxi" secondAttribute="trailing" constant="12" id="2Ow-i8-b9d"/>
-                            <constraint firstItem="Fug-1Z-Szg" firstAttribute="top" secondItem="pVC-du-4G1" secondAttribute="bottom" constant="8" id="8Sy-sL-AsO"/>
+                            <constraint firstItem="Fug-1Z-Szg" firstAttribute="top" secondItem="pVC-du-4G1" secondAttribute="bottom" constant="2" id="8Sy-sL-AsO"/>
                             <constraint firstItem="pVC-du-4G1" firstAttribute="leading" secondItem="HGY-sk-pQI" secondAttribute="leading" constant="12" id="CCr-bV-bN2"/>
                             <constraint firstAttribute="trailing" secondItem="qwe-MD-Wu2" secondAttribute="trailing" constant="12" id="CyC-2V-m6y"/>
                             <constraint firstItem="5Mi-jM-COd" firstAttribute="top" secondItem="Nie-sY-Vxi" secondAttribute="bottom" constant="8" id="QMB-hu-6Q1"/>

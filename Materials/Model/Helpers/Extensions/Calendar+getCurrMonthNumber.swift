@@ -11,7 +11,7 @@ import Foundation
 extension Calendar {
     
     func getCurrMonthNumber() -> String {
-        let monthNumber = Calendar.current.component(.month, from: Date())
+        let monthNumber = component(.month, from: Date()) - 1
         let stringMonthNumber: String
         if monthNumber < 10 {
             stringMonthNumber = "0" + String(monthNumber)
@@ -23,7 +23,7 @@ extension Calendar {
     }
     
     func getCurrYearNumber() -> String {
-        let yearNumber = Calendar.current.component(.year, from: Date())
+        let yearNumber = component(.year, from: Date())
         return String(yearNumber)
     }
     
