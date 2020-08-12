@@ -93,3 +93,15 @@ extension NewTableViewController {
     }
     
 }
+
+// MARK: Table view delegate
+extension NewTableViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        
+        let vc = DetailMaterialViewController(material: notLastMonthMaterials[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}

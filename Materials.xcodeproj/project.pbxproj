@@ -16,7 +16,6 @@
 		4A104C7724D5D18700D5219A /* Material+newObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7624D5D18700D5219A /* Material+newObject.swift */; };
 		4A104C7A24D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */; };
 		4A104C7D24DD5AF500D5219A /* DetailMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */; };
-		4A104C7E24DD5AF500D5219A /* DetailMaterialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A104C7C24DD5AF500D5219A /* DetailMaterialViewController.xib */; };
 		4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCD24C8425A0089D812 /* AppDelegate.swift */; };
 		4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCF24C8425A0089D812 /* SceneDelegate.swift */; };
 		4A472CD524C8425A0089D812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD324C8425A0089D812 /* Main.storyboard */; };
@@ -57,7 +56,6 @@
 		4A104C7624D5D18700D5219A /* Material+newObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Material+newObject.swift"; sourceTree = "<group>"; };
 		4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+getCurrMonthNumber.swift"; sourceTree = "<group>"; };
 		4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMaterialViewController.swift; sourceTree = "<group>"; };
-		4A104C7C24DD5AF500D5219A /* DetailMaterialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMaterialViewController.xib; sourceTree = "<group>"; };
 		4A472CCA24C8425A0089D812 /* Materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Materials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A472CCD24C8425A0089D812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A472CCF24C8425A0089D812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
 				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
 				4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */,
-				4A104C7C24DD5AF500D5219A /* DetailMaterialViewController.xib */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -392,7 +389,6 @@
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
-				4A104C7E24DD5AF500D5219A /* DetailMaterialViewController.xib in Resources */,
 				4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */,
 				4A472D1224CABFB20089D812 /* LabelViewCell.xib in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,

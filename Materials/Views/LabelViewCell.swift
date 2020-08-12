@@ -1,5 +1,5 @@
 //
-//  SectionViewCell.swift
+//  LabelViewCell.swift
 //  Materials
 //
 //  Created by art-off on 24.07.2020.
