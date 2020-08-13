@@ -36,6 +36,7 @@ class CustomHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Setup Views
     func configureContents() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 

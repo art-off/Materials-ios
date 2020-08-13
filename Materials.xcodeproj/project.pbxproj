@@ -16,6 +16,10 @@
 		4A104C7724D5D18700D5219A /* Material+newObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7624D5D18700D5219A /* Material+newObject.swift */; };
 		4A104C7A24D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */; };
 		4A104C7D24DD5AF500D5219A /* DetailMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */; };
+		4A104C8524E522EA00D5219A /* FileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C8424E522EA00D5219A /* FileView.swift */; };
+		4A104C8724E5343100D5219A /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C8624E5343100D5219A /* FileHelper.swift */; };
+		4A104C8924E5446900D5219A /* FileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A104C8824E5446900D5219A /* FileView.xib */; };
+		4A104C8B24E5C96B00D5219A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C8A24E5C96A00D5219A /* CustomButton.swift */; };
 		4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCD24C8425A0089D812 /* AppDelegate.swift */; };
 		4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A472CCF24C8425A0089D812 /* SceneDelegate.swift */; };
 		4A472CD524C8425A0089D812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A472CD324C8425A0089D812 /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		4A104C7624D5D18700D5219A /* Material+newObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Material+newObject.swift"; sourceTree = "<group>"; };
 		4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+getCurrMonthNumber.swift"; sourceTree = "<group>"; };
 		4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMaterialViewController.swift; sourceTree = "<group>"; };
+		4A104C8424E522EA00D5219A /* FileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileView.swift; sourceTree = "<group>"; };
+		4A104C8624E5343100D5219A /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		4A104C8824E5446900D5219A /* FileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileView.xib; sourceTree = "<group>"; };
+		4A104C8A24E5C96A00D5219A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4A472CCA24C8425A0089D812 /* Materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Materials.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A472CCD24C8425A0089D812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A472CCF24C8425A0089D812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 				4A104C7824D6A88C00D5219A /* Extensions */,
 				4A472D0D24C9F53D0089D812 /* MaterialHelper.swift */,
 				4A104C7224D568FA00D5219A /* UserHelpers.swift */,
+				4A104C8624E5343100D5219A /* FileHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -126,6 +135,30 @@
 				4A104C7924D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A104C7F24E5207000D5219A /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				4A104C6D24D55FEF00D5219A /* UserViewCell.swift */,
+				4A104C6E24D55FEF00D5219A /* UserViewCell.xib */,
+			);
+			path = AboutMe;
+			sourceTree = "<group>";
+		};
+		4A104C8124E520D000D5219A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4A472CF824C8C43D0089D812 /* MaterialViewCell.swift */,
+				4A472CF924C8C43D0089D812 /* MaterialViewCell.xib */,
+				4A472D0F24CABFB20089D812 /* LabelViewCell.swift */,
+				4A472D1024CABFB20089D812 /* LabelViewCell.xib */,
+				4A104C7424D58FEB00D5219A /* CustomHeader.swift */,
+				4A104C8424E522EA00D5219A /* FileView.swift */,
+				4A104C8824E5446900D5219A /* FileView.xib */,
+				4A104C8A24E5C96A00D5219A /* CustomButton.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		4A472CC124C8425A0089D812 = {
@@ -208,13 +241,8 @@
 		4A472CEB24C85A6E0089D812 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4A472CF824C8C43D0089D812 /* MaterialViewCell.swift */,
-				4A472CF924C8C43D0089D812 /* MaterialViewCell.xib */,
-				4A472D0F24CABFB20089D812 /* LabelViewCell.swift */,
-				4A472D1024CABFB20089D812 /* LabelViewCell.xib */,
-				4A104C6D24D55FEF00D5219A /* UserViewCell.swift */,
-				4A104C6E24D55FEF00D5219A /* UserViewCell.xib */,
-				4A104C7424D58FEB00D5219A /* CustomHeader.swift */,
+				4A104C8124E520D000D5219A /* General */,
+				4A104C7F24E5207000D5219A /* AboutMe */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A104C8924E5446900D5219A /* FileView.xib in Resources */,
 				4A472D1624CACC020089D812 /* MaterialsTableViewController.xib in Resources */,
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
@@ -448,6 +477,7 @@
 				4A472D1E24CAD77F0089D812 /* SearchTableViewController.swift in Sources */,
 				4A472CFF24C9693D0089D812 /* MaterialsResponse.swift in Sources */,
 				4A472CF524C86DE30089D812 /* Material.swift in Sources */,
+				4A104C8B24E5C96B00D5219A /* CustomButton.swift in Sources */,
 				4A104C7324D568FA00D5219A /* UserHelpers.swift in Sources */,
 				4A104C7A24D6A8A400D5219A /* Calendar+getCurrMonthNumber.swift in Sources */,
 				4A472CFA24C8C43D0089D812 /* MaterialViewCell.swift in Sources */,
@@ -462,10 +492,12 @@
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
 				4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */,
 				4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */,
+				4A104C8524E522EA00D5219A /* FileView.swift in Sources */,
 				4A104C6F24D55FEF00D5219A /* UserViewCell.swift in Sources */,
 				4A472CCE24C8425A0089D812 /* AppDelegate.swift in Sources */,
 				4A472D0E24C9F53D0089D812 /* MaterialHelper.swift in Sources */,
 				4A104C7724D5D18700D5219A /* Material+newObject.swift in Sources */,
+				4A104C8724E5343100D5219A /* FileHelper.swift in Sources */,
 				4A472CD024C8425A0089D812 /* SceneDelegate.swift in Sources */,
 				4A472D0C24C9EBD30089D812 /* Realm+CascadeDeleting.swift in Sources */,
 				4A472D0224C9733C0089D812 /* API.swift in Sources */,

@@ -78,6 +78,7 @@ extension NewTableViewController {
                 let labelCell = tableView.dequeueReusableCell(withIdentifier: LabelViewCell.reuseIdentifier, for: indexPath) as! LabelViewCell
                 labelCell.textInConteiner = "В текущем месяце не было материалов"
                 labelCell.textInConteinerLabel.textColor = .gray
+                labelCell.isUserInteractionEnabled = false
                 return labelCell
             }
             
