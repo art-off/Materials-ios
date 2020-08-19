@@ -11,14 +11,13 @@ import RealmSwift
 class UserHelpers {
     
     static func authUser(user: User) {
-        // удаляем всех юзеров (он только один, но на всякий случай)
-        let users = DataManager.shared.getUsers()
-        for user in users {
-            DataManager.shared.delete(user: user)
-        }
-        
+        deleteAllUsers()
         // записываем единтсвенного юзера
         DataManager.shared.write(user: user)
+    }
+    
+    static func logoutCurrUser() {
+        deleteAllUsers()
     }
     
     static func getCurrUser() -> User? {
@@ -27,4 +26,11 @@ class UserHelpers {
         return optionalUser
     }
     
+    
+    private static func deleteAllUsers() {
+        let users = DataManager.shared.getUsers()
+        for user in users {
+            DataManager.shared.delete(user: user)
+        }
+    }
 }

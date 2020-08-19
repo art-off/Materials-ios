@@ -10,6 +10,7 @@ import Foundation
 
 class FileHelper {
     
+    // MARK: - Get info from file name
     static func getFileNumber(fileName: String) -> Int? {
         guard let substrRange1 = fileName.range(of: "\\([0-9]+\\)", options: .regularExpression) else { return nil }
         let numberWithBrackets = fileName[substrRange1]
@@ -31,4 +32,21 @@ class FileHelper {
         return ext
     }
     
+    // MARK: - Get text from doc
+    static func getTextFromDoc(withFileName name: String, complition: @escaping (String?) -> Void) {
+        
+        
+        
+    }
+    
+    // Только png, jpg, jpeg, mp3, gif, mp4
+    
+    // png
+    // jpg
+    // gif
+    
+    // mp3
+    // mp4
+    
+    // docx
 }

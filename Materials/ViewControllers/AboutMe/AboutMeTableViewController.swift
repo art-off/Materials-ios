@@ -44,6 +44,7 @@ class AboutMeTableViewController: LogoTableViewController {
         ]
         
         user = UserHelpers.getCurrUser()
+        
         materials = []
         if let user = user {
             materials = MaterialHelper.getMaterialsWithDoneDate(doneMaterials: Array(user.materials))

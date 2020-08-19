@@ -13,6 +13,8 @@ class DataManager {
     static let shared = DataManager()
     
     private let realm: Realm
+    // Директория для файлов
+    private let filesDirectory: URL
     
     init() {
         let fileManager = FileManager.default
@@ -36,6 +38,19 @@ class DataManager {
         realm = try! Realm(configuration: realmConfig)
         
         print(realmURL)
+        
+        
+        // Директория для файлов
+        filesDirectory = materialsURL
+            .appendingPathComponent("files")
+        
+        if !fileManager.fileExists(atPath: filesDirectory.path) {
+            do {
+                try fileManager.createDirectory(at: filesDirectory, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                NSLog("Не выходит сосздать папку для файлов")
+            }
+        }
     }
     
 }
@@ -106,6 +121,15 @@ extension DataManager {
         try? realm.write {
             realm.delete(user)
         }
+    }
+    
+}
+
+// MARK: - Files
+extension DataManager {
+    
+    func getFilesDirectoryUrl() -> URL {
+        return filesDirectory
     }
     
 }

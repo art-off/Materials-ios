@@ -15,6 +15,8 @@ class NewTableViewController: UITableViewController {
     var lastMonthMaterials: Results<Material>!
     var notLastMonthMaterials: Results<Material>!
     
+    let activityIndicatorView = ActivityIndicatorView()
+    let alertView = AlertView()
     
     // MARK: - Overrides
     override func loadView() {
@@ -95,14 +97,61 @@ extension NewTableViewController {
     
 }
 
-// MARK: Table view delegate
+// MARK: - Table view delegate
 extension NewTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        let material: Material
+        if indexPath.section == 0 {
+            material = lastMonthMaterials[indexPath.row]
+        } else {
+            material = notLastMonthMaterials[indexPath.row]
+        }
+        
+        
+        
         
         let vc = DetailMaterialViewController(material: notLastMonthMaterials[indexPath.row])
+        //let vc = DocViewController()
+        
+        // тут запускать анимацию и ждать пока скачается док
+        //vc.contentMaterialLabel.text =
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+// MARK: - Animating
+extension NewTableViewController {
+    
+    // MARK: Activity Indicator
+    func startActivityIndicator() {
+        if !view.subviews.contains(activityIndicatorView) {
+            view.addSubview(activityIndicatorView)
+            activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicatorView.addConstraintsOnAllSides(to: view.safeAreaLayoutGuide, withConstant: 0)
+        }
+        activityIndicatorView.startAnimating()
+        tableView.isScrollEnabled = false
+    }
+    
+    func stopActivityIndicator() {
+        activityIndicatorView.stopAnimating()
+        tableView.isScrollEnabled = true
+    }
+    
+    // MARK: Alert View
+    func showAlert(withText alertText: String) {
+        if !view.subviews.contains(alertView) {
+            view.addSubview(alertView)
+            
+            alertView.translatesAutoresizingMaskIntoConstraints = false
+            alertView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+            alertView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        }
+        
+        alertView.alertLabel.text = alertText
+        alertView.hideWithAnimation()
     }
     
 }

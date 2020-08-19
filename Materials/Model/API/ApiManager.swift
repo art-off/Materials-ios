@@ -10,6 +10,7 @@ import Foundation
 
 class ApiManager {
     
+    // MARK: - Load materials
     static func loadAllMaterials(complition: @escaping ([Material]?) -> Void) {
         let url = API.allMaterials()
         
@@ -37,6 +38,7 @@ class ApiManager {
         task.resume()
     }
     
+    // MARK: - Auth
     static func authUser(withEmail email: String, password: String, complition: @escaping (User?) -> Void) {
         let url = API.getUser()
         
@@ -96,7 +98,37 @@ class ApiManager {
         }
         
         task.resume()
+    }
+    
+    // MARK: - Files
+    static func downloadFile(withFileName name: String, complition: @escaping (_ isFinished: Bool?) -> Void) {
+        let url = API.download(fileName: name)
         
+        let fileUrl = DataManager.shared.getFilesDirectoryUrl()
+            .appendingPathComponent(name)
+        
+        let task = URLSession.shared.downloadTask(with: url) { tempLocalUrl, response, error in
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200..<300).contains(httpResponse.statusCode) else {
+                    complition(nil)
+                    return
+            }
+            
+            guard let tempLocalUrl = tempLocalUrl else {
+                complition(nil)
+                return
+            }
+            
+            do {
+                try FileManager.default.copyItem(at: tempLocalUrl, to: fileUrl)
+                complition(true)
+            } catch let writeError {
+                print(writeError)
+                complition(nil)
+            }
+        }
+        
+        task.resume()
     }
     
 }

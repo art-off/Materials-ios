@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SNDocx
 
 class DetailMaterialViewController: UIViewController {
     
@@ -56,6 +57,16 @@ class DetailMaterialViewController: UIViewController {
     
     let testButton = CustomButton()
     
+    // MARK: ActivityIndicatorView
+    let activityIndicatorView = ActivityIndicatorView()
+    // MARK: Alert View
+    let alertViewForNetwork = AlertView(alertText: "Проблемы с интернетом")
+    
+    // MARK: - Properties
+    private var material: Material!
+    
+    private var docOpener: UIDocumentInteractionController!
+    
     // MARK: - Initialization
     convenience init(material: Material) {
         self.init()
@@ -63,14 +74,15 @@ class DetailMaterialViewController: UIViewController {
     }
     
     func set(material: Material) {
-        nameMaterialLabel.text = material.name
-        dateMateriallabel.text = "Дата: \(material.date)"
-        
-        if let files = material.files {
-            // Тут прочитать файл и вставить текст
-            contentMaterialLabel.text = files.doc
-            configurateFilesStack(withFileNames: Array(files.add))
-        }
+//        nameMaterialLabel.text = material.name
+//        dateMateriallabel.text = "Дата: \(material.date)"
+//
+//        if let files = material.files {
+//            // Тут прочитать файл и вставить текст
+//            contentMaterialLabel.text = files.doc
+//            configurateFilesStack(withFileNames: Array(files.add))
+//        }
+        self.material = material
     }
     
     // MARK: - Ovirredes
@@ -91,6 +103,21 @@ class DetailMaterialViewController: UIViewController {
         //nameMaterialLabel.text = "Название материала честно"
         //dateMateriallabel.text = "Дата: 2000-20-20"
         contentMaterialLabel.text = "А тут рили прям большой очень очень материал я даже \n хз что с ним делатsdfjllaskdj fal;skdjf l;aksdjf laks;djf als;kdfj \n\n\n\nn\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\nlkjdflskdjflksdjlf kjdsfdsjfls'kdj f\n\n\n\n\nь"
+        
+        if let files = material.files {
+//            configurateLabels(
+//                withNameText: material.name,
+//                dateText: material.date,
+//                contentText: <#T##String#>)
+            configurateFilesStack(withFileNames: Array(files.add))
+        }
+        
+//        let url = DataManager.shared.getFilesDirectoryUrl().appendingPathComponent("6(0).docx")
+//        print("Хелло1")
+//        let text = SNDocx.shared.getText(fileUrl: url)
+//        print("Хелло2")
+//        print(text)
+//        contentMaterialLabel.text = text
         
         configurateButton()
     }
@@ -150,6 +177,13 @@ class DetailMaterialViewController: UIViewController {
         testButton.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -(leadingConstant + trailingConstant)).isActive = true
     }
     
+    // MARK: - Configuration
+    private func configurateLabels(withNameText nameText: String, dateText: String, contentText: String) {
+        nameMaterialLabel.text = nameText
+        dateMateriallabel.text = dateText
+        contentMaterialLabel.text = contentText
+    }
+    
     private func configurateFilesStack(withFileNames names: [String]) {
         for fileName in names {
             let fileView = FileView(fileName: fileName)
@@ -165,7 +199,89 @@ class DetailMaterialViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func onTestButtonTapped() {
-        print("sdfsdf")
+        showAlertForNetwork()
+        //showDoc(withName: "2(0).docx")
     }
 
+}
+
+
+// MARK: - All For Preview DOCX
+extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate {
+    
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
+
+    func documentInteractionControllerViewForPreview(_ controller: UIDocumentInteractionController) -> UIView? {
+        return self.view
+    }
+
+    func documentInteractionControllerRectForPreview(_ controller: UIDocumentInteractionController) -> CGRect {
+        return self.view.frame
+    }
+    
+    private func _showDoc(withName fileName: String) {
+        let fileURL = DataManager.shared.getFilesDirectoryUrl()
+            .appendingPathComponent(fileName)
+        
+        docOpener = UIDocumentInteractionController.init(url: fileURL)
+        docOpener.delegate = self
+        docOpener.presentPreview(animated: true)
+    }
+    
+}
+
+
+extension DetailMaterialViewController: ShowingFiles {
+    
+    func showDoc(withName fileName: String) {
+        _showDoc(withName: fileName)
+    }
+    
+    func showImage(withName: String) {
+        
+    }
+    
+    func showVideo(withName: String) {
+        
+    }
+    
+    func showAudio(withName: String) {
+        
+        
+    }
+    
+}
+
+
+extension DetailMaterialViewController {
+    
+    // MARK: Activity Indicator
+    func startActivityIndicator() {
+        if !view.subviews.contains(activityIndicatorView) {
+            view.addSubview(activityIndicatorView)
+            activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicatorView.addConstraintsOnAllSides(to: view.safeAreaLayoutGuide, withConstant: 0)
+        }
+        activityIndicatorView.startAnimating()
+    }
+    
+    func stopActivityIndicator() {
+        activityIndicatorView.stopAnimating()
+    }
+    
+    // MARK: Arert View
+    func showAlertForNetwork() {
+        if !view.subviews.contains(alertViewForNetwork) {
+            view.addSubview(alertViewForNetwork)
+            
+            alertViewForNetwork.translatesAutoresizingMaskIntoConstraints = false
+            alertViewForNetwork.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+            alertViewForNetwork.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        }
+        
+        alertViewForNetwork.hideWithAnimation()
+    }
+    
 }
