@@ -37,10 +37,36 @@ class NewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateTableData()
+        _downloadMaterials()
+    }
+    
+    // MARK: - Privates methods
+    private func updateTableData() {
         lastMonthMaterials = MaterialHelper.getLastMonthMaterials()
         notLastMonthMaterials = MaterialHelper.getNotLastMonthMaterials()
+        tableView.reloadData()
     }
-
+    
+    private func _downloadMaterials() {
+        startActivityIndicator()
+        MaterialHelper.loadAllMaterialsFromApiAndWriteInBD { isDone in
+            DispatchQueue.main.async {
+                if isDone {
+                    self.updateTableData()
+                } else {
+                    self.showAlert(withText: "Проблемы с загрузкой")
+                }
+                self.stopActivityIndicator()
+            }
+        }
+    }
+    
+    // MARK: - IBActions
+    @IBAction func downloadMaterials(_ sender: UIBarButtonItem) {
+        _downloadMaterials()
+    }
+    
 }
 
 
@@ -59,6 +85,7 @@ extension NewTableViewController {
         } else {
             view.title = "Остальные"
         }
+        view.backgroundView?.backgroundColor = Colors.backgroupd
         
         return view
     }
@@ -68,7 +95,10 @@ extension NewTableViewController {
             if lastMonthMaterials.isEmpty { return 1 }
             return lastMonthMaterials.count
         }
-        else { return notLastMonthMaterials.count }
+        else {
+            if notLastMonthMaterials.isEmpty { return 1 }
+            return notLastMonthMaterials.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,6 +116,14 @@ extension NewTableViewController {
             
             material = lastMonthMaterials[indexPath.row]
         } else {
+            if notLastMonthMaterials.isEmpty {
+                let labelCell = tableView.dequeueReusableCell(withIdentifier: LabelViewCell.reuseIdentifier, for: indexPath) as! LabelViewCell
+                labelCell.textInConteiner = "В предыдущие месяцы материалов не было"
+                labelCell.textInConteinerLabel.textColor = .gray
+                labelCell.isUserInteractionEnabled = false
+                return labelCell
+            }
+            
             material = notLastMonthMaterials[indexPath.row]
         }
         cell.name = material.name
@@ -108,11 +146,9 @@ extension NewTableViewController {
             material = notLastMonthMaterials[indexPath.row]
         }
         
+        let vc = DetailMaterialViewController(material: material)
         
         
-        
-        let vc = DetailMaterialViewController(material: notLastMonthMaterials[indexPath.row])
-        //let vc = DocViewController()
         
         // тут запускать анимацию и ждать пока скачается док
         //vc.contentMaterialLabel.text =

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SNDocx
 
 class DetailMaterialViewController: UIViewController {
     
@@ -209,6 +208,15 @@ class DetailMaterialViewController: UIViewController {
 // MARK: - All For Preview DOCX
 extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate {
     
+    private func _showDoc(withName fileName: String) {
+        let fileURL = DataManager.shared.getFilesDirectoryUrl()
+            .appendingPathComponent(fileName)
+        
+        docOpener = UIDocumentInteractionController.init(url: fileURL)
+        docOpener.delegate = self
+        docOpener.presentPreview(animated: true)
+    }
+    
     func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
         return self
     }
@@ -221,18 +229,10 @@ extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate 
         return self.view.frame
     }
     
-    private func _showDoc(withName fileName: String) {
-        let fileURL = DataManager.shared.getFilesDirectoryUrl()
-            .appendingPathComponent(fileName)
-        
-        docOpener = UIDocumentInteractionController.init(url: fileURL)
-        docOpener.delegate = self
-        docOpener.presentPreview(animated: true)
-    }
-    
 }
 
 
+// MARK: - Showing files
 extension DetailMaterialViewController: ShowingFiles {
     
     func showDoc(withName fileName: String) {
@@ -249,12 +249,12 @@ extension DetailMaterialViewController: ShowingFiles {
     
     func showAudio(withName: String) {
         
-        
     }
     
 }
 
 
+// MARK: - Network
 extension DetailMaterialViewController {
     
     // MARK: Activity Indicator

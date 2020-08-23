@@ -32,10 +32,8 @@ class FileHelper {
         return ext
     }
     
-    // MARK: - Get text from doc
-    static func getTextFromDoc(withFileName name: String, complition: @escaping (String?) -> Void) {
-        
-        
+    // MARK: - Для работы с API
+    static func loadFile() {
         
     }
     

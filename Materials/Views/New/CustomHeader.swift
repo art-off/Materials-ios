@@ -27,8 +27,9 @@ class CustomHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         
         configureContents()
-        contentView.backgroundColor = Colors.backgroupd
-        backgroundColor = Colors.backgroupd
+        //contentView.backgroundColor = Colors.backgroupd
+        //backgroundColor = Colors.backgroupd
+        backgroundView = UIView(frame: self.bounds)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
@@ -43,7 +44,7 @@ class CustomHeader: UITableViewHeaderFooterView {
         contentView.addSubview(titleLabel)
 
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            //titleLabel.heightAnchor.constraint(equalToConstant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)

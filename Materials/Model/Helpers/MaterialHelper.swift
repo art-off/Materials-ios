@@ -74,4 +74,35 @@ class MaterialHelper {
         return materials
     }
     
+    
+    // MARK: - Для работы с API
+    private static func deleteAllMaterials() {
+        let materials = DataManager.shared.getMaterials()
+        for material in materials {
+            DataManager.shared.deleteMaterial(withId: material.id)
+        }
+    }
+    
+    static func loadAllMaterialsFromApiAndWriteInBD(complition: @escaping (Bool) -> Void ) {
+        ApiManager.loadAllMaterials { materials in
+            guard let materials = materials else {
+                complition(false)
+                return
+            }
+            
+            // Удаляем все прошлые материалы, чтобы всегда (но файлы оставляем)
+            DispatchQueue.main.async {
+                deleteAllMaterials()
+            }
+            
+            for material in materials {
+                DispatchQueue.main.async {
+                    DataManager.shared.write(material: material)
+                }
+            }
+            
+            complition(true)
+        }
+    }
+    
 }

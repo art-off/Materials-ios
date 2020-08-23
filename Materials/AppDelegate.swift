@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import SNDocx
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,13 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        ApiManager.downloadFile(withFileName: "6(0).docx") { isFinised in
-//            print(isFinised)
+//        MaterialHelper.loadAllMaterialsFromApiAndWriteInBD { isDone in
+//            print(isDone)
 //        }
         
-//        let url = DataManager.shared.getFilesDirectoryUrl().appendingPathComponent("2(0).docx")
-//
-//        print(SNDocx.shared.getText(fileUrl: url))
+        
         
         
         return true

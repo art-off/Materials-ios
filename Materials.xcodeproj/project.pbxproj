@@ -52,6 +52,10 @@
 		4A5B003B24CCD06300786B9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B003A24CCD06300786B9E /* User.swift */; };
 		4A5B003E24CCD7AF00786B9E /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B003D24CCD7AF00786B9E /* String+md5.swift */; };
 		4AA5588024ED46260069F4FE /* ShowingFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5587F24ED46260069F4FE /* ShowingFiles.swift */; };
+		4AB6801724EE8FED00872D3D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801524EE8FEC00872D3D /* TestViewController.swift */; };
+		4AB6801824EE8FED00872D3D /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801624EE8FED00872D3D /* TestViewController.xib */; };
+		4AB6801C24EE97D300872D3D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801A24EE97D300872D3D /* AuthViewController.swift */; };
+		4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801B24EE97D300872D3D /* AuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +106,10 @@
 		4A5B003A24CCD06300786B9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A5B003D24CCD7AF00786B9E /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		4AA5587F24ED46260069F4FE /* ShowingFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingFiles.swift; sourceTree = "<group>"; };
+		4AB6801524EE8FEC00872D3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		4AB6801624EE8FED00872D3D /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		4AB6801A24EE97D300872D3D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		4AB6801B24EE97D300872D3D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		DC9180CF77E51FC3F7CA11F0 /* Pods-Materials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.release.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.release.xcconfig"; sourceTree = "<group>"; };
 		E4889D491F3D3A938C6DA091 /* Pods-Materials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.debug.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +246,7 @@
 		4A472CE624C84E310089D812 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AB6801924EE97C000872D3D /* Auth */,
 				4A472D1C24CAD6B00089D812 /* General */,
 				4A472D1824CAD67E0089D812 /* New */,
 				4A472D1924CAD6850089D812 /* Info */,
@@ -330,6 +339,7 @@
 		4A472D1B24CAD6910089D812 /* AboutMe */ = {
 			isa = PBXGroup;
 			children = (
+				4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */,
 				4A5B003624CCC4EF00786B9E /* AboutMeTableViewController.swift */,
 			);
 			path = AboutMe;
@@ -338,11 +348,9 @@
 		4A472D1C24CAD6B00089D812 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				4AA5587E24ED45F80069F4FE /* Protocols */,
-				4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */,
 				4A472D1324CACC020089D812 /* MaterialsTableViewController.swift */,
 				4A472D1424CACC020089D812 /* MaterialsTableViewController.xib */,
-				4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */,
+				4AB6801424EE8E4F00872D3D /* DetailMaterial */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -378,6 +386,26 @@
 				4AA5587F24ED46260069F4FE /* ShowingFiles.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4AB6801424EE8E4F00872D3D /* DetailMaterial */ = {
+			isa = PBXGroup;
+			children = (
+				4AA5587E24ED45F80069F4FE /* Protocols */,
+				4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */,
+				4AB6801524EE8FEC00872D3D /* TestViewController.swift */,
+				4AB6801624EE8FED00872D3D /* TestViewController.xib */,
+			);
+			path = DetailMaterial;
+			sourceTree = "<group>";
+		};
+		4AB6801924EE97C000872D3D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4AB6801A24EE97D300872D3D /* AuthViewController.swift */,
+				4AB6801B24EE97D300872D3D /* AuthViewController.xib */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		D1742551DDF47DA935FDE952 /* Pods */ = {
@@ -455,8 +483,10 @@
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
+				4AB6801824EE8FED00872D3D /* TestViewController.xib in Resources */,
 				4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */,
 				4A472D1224CABFB20089D812 /* LabelViewCell.xib in Resources */,
+				4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +552,7 @@
 				4A5B003E24CCD7AF00786B9E /* String+md5.swift in Sources */,
 				4A472D0624C97C310089D812 /* InfoTableViewController.swift in Sources */,
 				4A104C7D24DD5AF500D5219A /* DetailMaterialViewController.swift in Sources */,
+				4AB6801C24EE97D300872D3D /* AuthViewController.swift in Sources */,
 				4A472CEA24C854FD0089D812 /* UIView+addConstraints.swift in Sources */,
 				4A5B003724CCC4EF00786B9E /* AboutMeTableViewController.swift in Sources */,
 				4A5B003924CCC97600786B9E /* UserResponse.swift in Sources */,
@@ -544,6 +575,7 @@
 				4A472CF324C86D330089D812 /* Common.swift in Sources */,
 				4A5B003B24CCD06300786B9E /* User.swift in Sources */,
 				4A104C7524D58FEB00D5219A /* CustomHeader.swift in Sources */,
+				4AB6801724EE8FED00872D3D /* TestViewController.swift in Sources */,
 				4A104C9124E6802600D5219A /* AlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

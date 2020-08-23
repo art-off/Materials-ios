@@ -60,7 +60,13 @@
                             <outlet property="delegate" destination="O7F-sa-oBP" id="Wiw-Mw-2B6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новое" id="TFa-rq-GBY"/>
+                    <navigationItem key="navigationItem" title="Новое" id="TFa-rq-GBY">
+                        <barButtonItem key="rightBarButtonItem" title="Обновить" id="2ls-JV-b3e">
+                            <connections>
+                                <action selector="downloadMaterials:" destination="O7F-sa-oBP" id="2vY-ft-Nqt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-tU-LYu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
