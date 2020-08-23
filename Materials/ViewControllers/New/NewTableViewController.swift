@@ -49,7 +49,10 @@ class NewTableViewController: UITableViewController {
     }
     
     private func _downloadMaterials() {
-        startActivityIndicator()
+        // ДА, ФУНКЦИЯ НЕ ВЫЗЫВАЕТСЯ ИЗ БЭК, НО ЕСЛИ НЕ ЗАСУНУТЬ СЮДА БУДУТ ОШИБКА ПО КОНСТРЕЙНТАМ Я ХЗ ПОЧЕМУ
+        DispatchQueue.main.async {
+            self.startActivityIndicator()
+        }
         MaterialHelper.loadAllMaterialsFromApiAndWriteInBD { isDone in
             DispatchQueue.main.async {
                 if isDone {
@@ -150,6 +153,8 @@ extension NewTableViewController {
         
         
         
+        
+        
         // тут запускать анимацию и ждать пока скачается док
         //vc.contentMaterialLabel.text =
         navigationController?.pushViewController(vc, animated: true)
@@ -168,12 +173,16 @@ extension NewTableViewController {
             activityIndicatorView.addConstraintsOnAllSides(to: view.safeAreaLayoutGuide, withConstant: 0)
         }
         activityIndicatorView.startAnimating()
-        tableView.isScrollEnabled = false
+        //tableView.isScrollEnabled = false
+        //tableView.isUserInteractionEnabled = false
+        tabBarController?.view.isUserInteractionEnabled = false
     }
     
     func stopActivityIndicator() {
         activityIndicatorView.stopAnimating()
-        tableView.isScrollEnabled = true
+        tabBarController?.view.isUserInteractionEnabled = true
+        //tableView.isUserInteractionEnabled = true
+        //tableView.isScrollEnabled = true
     }
     
     // MARK: Alert View
