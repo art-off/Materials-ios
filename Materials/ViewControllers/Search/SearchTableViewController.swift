@@ -43,8 +43,15 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNotificationCenter()
         
+        updateTableData()
+    }
+    
+    // MARK: - Private Methods
+    private func updateTableData() {
         materials = MaterialHelper.getAllMaterials()
+        tableView.reloadData()
     }
     
     // MARK: - Setup search controller
@@ -89,4 +96,18 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         tableView.reloadData()
     }
 
+}
+
+
+// MARK: - Notification Center
+extension SearchTableViewController {
+    
+    func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
+    }
+    
+    @objc private func onDidUpdateMaterials() {
+        updateTableData()
+    }
+    
 }

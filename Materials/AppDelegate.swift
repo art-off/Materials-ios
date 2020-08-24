@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(isDone)
 //        }
         
-        
+        //FileHelper.getFilaNameWithTxtFromDoc(fileName: "1(0).docx")
         
         
         return true

@@ -101,7 +101,7 @@ class ApiManager {
     }
     
     // MARK: - Files
-    static func downloadFile(withFileName name: String, complition: @escaping (_ isFinished: Bool?) -> Void) {
+    static func downloadFile(withFileName name: String, complition: @escaping (_ isDone: Bool) -> Void) {
         let url = API.download(fileName: name)
         
         let fileUrl = DataManager.shared.getFilesDirectoryUrl()
@@ -110,12 +110,12 @@ class ApiManager {
         let task = URLSession.shared.downloadTask(with: url) { tempLocalUrl, response, error in
             guard let httpResponse = response as? HTTPURLResponse,
                 (200..<300).contains(httpResponse.statusCode) else {
-                    complition(nil)
+                    complition(false)
                     return
             }
             
             guard let tempLocalUrl = tempLocalUrl else {
-                complition(nil)
+                complition(false)
                 return
             }
             
@@ -124,7 +124,7 @@ class ApiManager {
                 complition(true)
             } catch let writeError {
                 print(writeError)
-                complition(nil)
+                complition(false)
             }
         }
         

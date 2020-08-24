@@ -11,7 +11,11 @@ import UIKit
 class FileView: UIView {
     
     // MARK: - Properties
-    var fileName: String!
+    var delegate: ShowingFiles?
+    
+    private var fileName: String!
+    private var isDocFile: Bool!
+    private var fileExtension: String?
     
     // MARK: - Outlets
     @IBOutlet weak var contentView: UIView!
@@ -29,10 +33,19 @@ class FileView: UIView {
         commonInit()
     }
     
-    convenience init(fileName: String) {
+    convenience init(fileName: String, isDocFile: Bool, delegate: ShowingFiles) {
         self.init()
         self.fileName = fileName
-        setText(withFileName: self.fileName)
+        self.isDocFile = isDocFile
+        self.delegate = delegate
+        
+        self.fileExtension = FileHelper.getFileExtension(fileName: fileName)
+        
+        if isDocFile {
+            setTextForDocFile(withFileName: fileName)
+        } else {
+            setTextForAddFile(withFileName: fileName)
+        }
     }
     
     private func commonInit() {
@@ -55,14 +68,25 @@ class FileView: UIView {
     }
     
     // MARK: - Privates Methods
-    private func setText(withFileName name: String) {
+    private func setTextForAddFile(withFileName name: String) {
         let number = FileHelper.getFileNumber(fileName: name)
-        let ext = FileHelper.getFileExtension(fileName: name)
         
         let stringNumber = number != nil ? String(number!) : "[Неопределенный номер]"
-        let stringExt = ext != nil ? ext! : "[Неопределенное зарширение]"
+        let stringExtension = fileExtension != nil ? fileExtension! : "[Неопределенное зарширение]"
         
-        titleLabel.text = "\(stringNumber) файл (.\(stringExt))"
+        titleLabel.text = "\(stringNumber) файл (.\(stringExtension))"
+    }
+    
+    private func setTextForDocFile(withFileName name: String) {
+        titleLabel.text = "Оригинал текста"
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if isDocFile {
+            delegate?.showDoc(withName: fileName)
+        } else {
+            // тут обрабатывать файлы другого расширения
+        }
     }
 
 }

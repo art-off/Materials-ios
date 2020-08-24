@@ -32,9 +32,38 @@ class FileHelper {
         return ext
     }
     
-    // MARK: - Для работы с API
-    static func loadFile() {
+    static func getFilaNameWithTxtFromDoc(fileName: String) -> String? {
+        let nameAndExtension = fileName.split(separator: ".")
+        let name = String(nameAndExtension[0])
+        let ext = String(nameAndExtension[1])
         
+        guard (ext == "docx" || ext == "doc") else { return nil }
+        
+        return name + ".txt"
+    }
+    
+    // MARK: - Для работы с API
+    static func getTxtFileTextFromApiOrLocal(withName fileName: String, complition: @escaping (String?) -> Void) {
+        ApiManager.downloadFile(withFileName: fileName) { isDone in
+            if isDone {
+                // вставить еще ошубку, если доберусь
+                getTxtFileTextFromLocal(withname: fileName) { text in
+                    complition(text)
+                }
+            } else {
+                getTxtFileTextFromLocal(withname: fileName) { text in
+                    complition(text)
+                }
+            }
+        }
+    }
+    
+    private static func getTxtFileTextFromLocal(withname fileName: String, complition: @escaping (String?) -> Void) {
+        let fileUrl = DataManager.shared.getFilesDirectoryUrl()
+            .appendingPathComponent(fileName)
+        
+        let text = try? String(contentsOf: fileUrl, encoding: .utf8)
+        complition(text)
     }
     
     // Только png, jpg, jpeg, mp3, gif, mp4

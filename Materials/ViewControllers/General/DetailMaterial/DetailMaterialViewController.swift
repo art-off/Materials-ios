@@ -29,6 +29,15 @@ class DetailMaterialViewController: UIViewController {
         return label
     }()
     
+    let sectionMaterialLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.contentMode = .left
+        label.font = UIFont.boldSystemFont(ofSize: 21)
+        return label
+    }()
+    
     let dateMateriallabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -59,29 +68,23 @@ class DetailMaterialViewController: UIViewController {
     // MARK: ActivityIndicatorView
     let activityIndicatorView = ActivityIndicatorView()
     // MARK: Alert View
-    let alertViewForNetwork = AlertView(alertText: "Проблемы с интернетом")
+    let alertView = AlertView()
     
     // MARK: - Properties
     private var material: Material!
+    private var materialText: String!
     
     private var docOpener: UIDocumentInteractionController!
     
     // MARK: - Initialization
-    convenience init(material: Material) {
+    convenience init(material: Material, materialText: String) {
         self.init()
-        set(material: material)
+        set(material: material, materialText: materialText)
     }
     
-    func set(material: Material) {
-//        nameMaterialLabel.text = material.name
-//        dateMateriallabel.text = "Дата: \(material.date)"
-//
-//        if let files = material.files {
-//            // Тут прочитать файл и вставить текст
-//            contentMaterialLabel.text = files.doc
-//            configurateFilesStack(withFileNames: Array(files.add))
-//        }
+    func set(material: Material, materialText: String) {
         self.material = material
+        self.materialText = materialText
     }
     
     // MARK: - Ovirredes
@@ -99,24 +102,17 @@ class DetailMaterialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //nameMaterialLabel.text = "Название материала честно"
-        //dateMateriallabel.text = "Дата: 2000-20-20"
-        contentMaterialLabel.text = "А тут рили прям большой очень очень материал я даже \n хз что с ним делатsdfjllaskdj fal;skdjf l;aksdjf laks;djf als;kdfj \n\n\n\nn\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\nlkjdflskdjflksdjlf kjdsfdsjfls'kdj f\n\n\n\n\nь"
+        configurateLabels(
+            withNameText: material.name,
+            sectionText: material.section,
+            dateText: material.date,
+            contentText: materialText)
         
         if let files = material.files {
-//            configurateLabels(
-//                withNameText: material.name,
-//                dateText: material.date,
-//                contentText: <#T##String#>)
-            configurateFilesStack(withFileNames: Array(files.add))
+            configurateFilesStack(
+                withDocName: files.doc,
+                addFileNames: Array(files.add))
         }
-        
-//        let url = DataManager.shared.getFilesDirectoryUrl().appendingPathComponent("6(0).docx")
-//        print("Хелло1")
-//        let text = SNDocx.shared.getText(fileUrl: url)
-//        print("Хелло2")
-//        print(text)
-//        contentMaterialLabel.text = text
         
         configurateButton()
     }
@@ -141,10 +137,18 @@ class DetailMaterialViewController: UIViewController {
         nameMaterialLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: trailingConstant).isActive = true
         nameMaterialLabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -(leadingConstant + trailingConstant)).isActive = true
         
+        // Section Material Label
+        scrollView.addSubview(sectionMaterialLabel)
+        sectionMaterialLabel.translatesAutoresizingMaskIntoConstraints = false
+        sectionMaterialLabel.topAnchor.constraint(equalTo: nameMaterialLabel.bottomAnchor, constant: 4).isActive = true
+        sectionMaterialLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: leadingConstant).isActive = true
+        sectionMaterialLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: trailingConstant).isActive = true
+        sectionMaterialLabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -(leadingConstant + trailingConstant)).isActive = true
+        
         // Date Material Label
         scrollView.addSubview(dateMateriallabel)
         dateMateriallabel.translatesAutoresizingMaskIntoConstraints = false
-        dateMateriallabel.topAnchor.constraint(equalTo: nameMaterialLabel.bottomAnchor, constant: 4).isActive = true
+        dateMateriallabel.topAnchor.constraint(equalTo: sectionMaterialLabel.bottomAnchor, constant: 4).isActive = true
         dateMateriallabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: leadingConstant).isActive = true
         dateMateriallabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: trailingConstant).isActive = true
         dateMateriallabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -(leadingConstant + trailingConstant)).isActive = true
@@ -177,17 +181,22 @@ class DetailMaterialViewController: UIViewController {
     }
     
     // MARK: - Configuration
-    private func configurateLabels(withNameText nameText: String, dateText: String, contentText: String) {
+    private func configurateLabels(withNameText nameText: String, sectionText: String, dateText: String, contentText: String) {
         nameMaterialLabel.text = nameText
+        sectionMaterialLabel.text = sectionText
         dateMateriallabel.text = dateText
         contentMaterialLabel.text = contentText
     }
     
-    private func configurateFilesStack(withFileNames names: [String]) {
-        for fileName in names {
-            let fileView = FileView(fileName: fileName)
-            filesStackView.addArrangedSubview(fileView)
-            fileView.widthAnchor.constraint(equalTo: filesStackView.widthAnchor).isActive = true
+    private func configurateFilesStack(withDocName docName: String, addFileNames addNames: [String]) {
+        let docFileView = FileView(fileName: docName, isDocFile: true, delegate: self)
+        filesStackView.addArrangedSubview(docFileView)
+        docFileView.widthAnchor.constraint(equalTo: filesStackView.widthAnchor).isActive = true
+        
+        for addName in addNames {
+            let addFileView = FileView(fileName: addName, isDocFile: false, delegate: self)
+            filesStackView.addArrangedSubview(addFileView)
+            addFileView.widthAnchor.constraint(equalTo: filesStackView.widthAnchor).isActive = true
         }
     }
     
@@ -198,8 +207,7 @@ class DetailMaterialViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func onTestButtonTapped() {
-        showAlertForNetwork()
-        //showDoc(withName: "2(0).docx")
+        showNetworkAlert()
     }
 
 }
@@ -209,12 +217,30 @@ class DetailMaterialViewController: UIViewController {
 extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate {
     
     private func _showDoc(withName fileName: String) {
+        startActivityIndicator()
+        
         let fileURL = DataManager.shared.getFilesDirectoryUrl()
             .appendingPathComponent(fileName)
         
-        docOpener = UIDocumentInteractionController.init(url: fileURL)
-        docOpener.delegate = self
-        docOpener.presentPreview(animated: true)
+        if !FileManager.default.fileExists(atPath: fileURL.path) {
+            ApiManager.downloadFile(withFileName: fileName) { isDone in
+                DispatchQueue.main.async {
+                    if isDone {
+                        self.docOpener = UIDocumentInteractionController.init(url: fileURL)
+                        self.docOpener.delegate = self
+                        self.docOpener.presentPreview(animated: true)
+                    } else {
+                        self.showNetworkAlert()
+                    }
+                    self.stopActivityIndicator()
+                }
+            }
+        } else {
+            docOpener = UIDocumentInteractionController.init(url: fileURL)
+            docOpener.delegate = self
+            docOpener.presentPreview(animated: true)
+            stopActivityIndicator()
+        }
     }
     
     func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
@@ -272,16 +298,21 @@ extension DetailMaterialViewController {
     }
     
     // MARK: Arert View
-    func showAlertForNetwork() {
-        if !view.subviews.contains(alertViewForNetwork) {
-            view.addSubview(alertViewForNetwork)
+    func showAlert(withText alertText: String) {
+        if !view.subviews.contains(alertView) {
+            view.addSubview(alertView)
             
-            alertViewForNetwork.translatesAutoresizingMaskIntoConstraints = false
-            alertViewForNetwork.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-            alertViewForNetwork.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+            alertView.translatesAutoresizingMaskIntoConstraints = false
+            alertView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+            alertView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         }
         
-        alertViewForNetwork.hideWithAnimation()
+        alertView.alertLabel.text = alertText
+        alertView.hideWithAnimation()
+    }
+    
+    func showNetworkAlert() {
+        showAlert(withText: "Проблемы с интернетом")
     }
     
 }

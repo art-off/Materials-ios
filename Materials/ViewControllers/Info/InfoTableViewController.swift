@@ -28,16 +28,38 @@ class InfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNotificationCenter()
         
+        updateTableData()
+    }
+    
+    // MARK: - Private Methods
+    private func updateTableData() {
         sectionsAndMaterials = MaterialHelper.getMaterialsBySections()
         sections = []
         for sectionAndMaterial in sectionsAndMaterials {
             sections.append(sectionAndMaterial.key)
         }
         sections.sort()
+        tableView.reloadData()
     }
 
 }
+
+
+// MARK: - Notification Center
+extension InfoTableViewController {
+    
+    func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
+    }
+    
+    @objc private func onDidUpdateMaterials() {
+        updateTableData()
+    }
+    
+}
+
 
 // MARK: - Table view data source
 extension InfoTableViewController {

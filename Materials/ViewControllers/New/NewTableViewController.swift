@@ -37,6 +37,8 @@ class NewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addNotificationCenter()
+        
         updateTableData()
         _downloadMaterials()
     }
@@ -56,9 +58,10 @@ class NewTableViewController: UITableViewController {
         MaterialHelper.loadAllMaterialsFromApiAndWriteInBD { isDone in
             DispatchQueue.main.async {
                 if isDone {
-                    self.updateTableData()
+                    // отправляем обновление куда только нужно
+                    NotificationCenter.default.post(name: .didUpdateMaterials, object: nil)
                 } else {
-                    self.showAlert(withText: "Проблемы с загрузкой")
+                    self.showNetworkAlert()
                 }
                 self.stopActivityIndicator()
             }
@@ -68,6 +71,20 @@ class NewTableViewController: UITableViewController {
     // MARK: - IBActions
     @IBAction func downloadMaterials(_ sender: UIBarButtonItem) {
         _downloadMaterials()
+    }
+    
+}
+
+
+// MARK: Notification Center
+extension NewTableViewController {
+    
+    func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
+    }
+    
+    @objc private func onDidUpdateMaterials() {
+        updateTableData()
     }
     
 }
@@ -149,15 +166,24 @@ extension NewTableViewController {
             material = notLastMonthMaterials[indexPath.row]
         }
         
-        let vc = DetailMaterialViewController(material: material)
+        guard let files = material.files else { return }
         
+        guard let txtFileName = FileHelper.getFilaNameWithTxtFromDoc(fileName: files.doc) else { return }
         
-        
-        
-        
-        // тут запускать анимацию и ждать пока скачается док
-        //vc.contentMaterialLabel.text =
-        navigationController?.pushViewController(vc, animated: true)
+        startActivityIndicator()
+        FileHelper.getTxtFileTextFromApiOrLocal(withName: txtFileName) { text in
+            DispatchQueue.main.async {
+                guard let text = text else {
+                    self.showNetworkAlert()
+                    return
+                }
+                
+                let vc = DetailMaterialViewController(material: material, materialText: text)
+                
+                self.stopActivityIndicator()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
 }
@@ -197,6 +223,10 @@ extension NewTableViewController {
         
         alertView.alertLabel.text = alertText
         alertView.hideWithAnimation()
+    }
+    
+    func showNetworkAlert() {
+        showAlert(withText: "Проблемы с интернетом")
     }
     
 }

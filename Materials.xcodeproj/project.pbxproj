@@ -56,6 +56,7 @@
 		4AB6801824EE8FED00872D3D /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801624EE8FED00872D3D /* TestViewController.xib */; };
 		4AB6801C24EE97D300872D3D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801A24EE97D300872D3D /* AuthViewController.swift */; };
 		4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801B24EE97D300872D3D /* AuthViewController.xib */; };
+		4AB6801F24F3C89700872D3D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801E24F3C89700872D3D /* NotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		4AB6801624EE8FED00872D3D /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		4AB6801A24EE97D300872D3D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4AB6801B24EE97D300872D3D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		4AB6801E24F3C89700872D3D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		DC9180CF77E51FC3F7CA11F0 /* Pods-Materials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.release.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.release.xcconfig"; sourceTree = "<group>"; };
 		E4889D491F3D3A938C6DA091 /* Pods-Materials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.debug.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				4A472CE924C854FD0089D812 /* UIView+addConstraints.swift */,
+				4AB6801E24F3C89700872D3D /* NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				4A104C6C24D55EDD00D5219A /* LogoTableViewController.swift in Sources */,
 				4A472CF724C8C0EE0089D812 /* NewTableViewController.swift in Sources */,
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
+				4AB6801F24F3C89700872D3D /* NotificationName.swift in Sources */,
 				4AA5588024ED46260069F4FE /* ShowingFiles.swift in Sources */,
 				4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */,
 				4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */,
