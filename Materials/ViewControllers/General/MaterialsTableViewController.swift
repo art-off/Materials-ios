@@ -15,6 +15,9 @@ class MaterialsTableViewController: UITableViewController {
     var section: String!
     var materials: Results<Material>!
     
+    let activityIndicatorView = ActivityIndicatorView()
+    let alertView = AlertView()
+    
     // MARK: - Overrides
     override func loadView() {
         super.loadView()
@@ -54,6 +57,63 @@ extension MaterialsTableViewController {
         cell.selectionStyle = .none
         
         return cell
+    }
+    
+}
+
+
+// MARK: - Table view delegate
+extension MaterialsTableViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let material = materials[indexPath.row]
+
+        guard let files = material.files else { return }
+        
+        guard let txtFileName = FileHelper.getFilaNameWithTxtFromDoc(fileName: files.doc) else { return }
+        
+        startActivityIndicator()
+        FileHelper.getTxtFileTextFromApiOrLocal(withName: txtFileName) { text in
+            DispatchQueue.main.async {
+                guard let text = text else {
+                    self.showNetworkAlert()
+                    return
+                }
+                
+                let vc = DetailMaterialViewController(material: material, materialText: text)
+                
+                self.stopActivityIndicator()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
+}
+
+
+// MARK: - Animating Network View Controller
+extension MaterialsTableViewController: AnimatingNetworkViewController {
+    
+    func animatingSuperViewForDisplay() -> UIView {
+        return view
+    }
+    
+    func animatingViewForDisableUserInteraction() -> UIView {
+        if let tabBarController = tabBarController {
+            return tabBarController.view
+        } else if let navController = navigationController {
+            return navController.view
+        } else {
+            return view
+        }
+    }
+    
+    func animatingActivityIndicatorView() -> ActivityIndicatorView {
+        return activityIndicatorView
+    }
+    
+    func animatingAlertView() -> AlertView {
+        return alertView
     }
     
 }

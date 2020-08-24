@@ -57,6 +57,7 @@
 		4AB6801C24EE97D300872D3D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801A24EE97D300872D3D /* AuthViewController.swift */; };
 		4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801B24EE97D300872D3D /* AuthViewController.xib */; };
 		4AB6801F24F3C89700872D3D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801E24F3C89700872D3D /* NotificationName.swift */; };
+		4AB6802424F3EAED00872D3D /* AnimatingNetrorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6802324F3EAED00872D3D /* AnimatingNetrorkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		4AB6801A24EE97D300872D3D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4AB6801B24EE97D300872D3D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		4AB6801E24F3C89700872D3D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		4AB6802324F3EAED00872D3D /* AnimatingNetrorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingNetrorkViewController.swift; sourceTree = "<group>"; };
 		DC9180CF77E51FC3F7CA11F0 /* Pods-Materials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.release.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.release.xcconfig"; sourceTree = "<group>"; };
 		E4889D491F3D3A938C6DA091 /* Pods-Materials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.debug.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +250,7 @@
 		4A472CE624C84E310089D812 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AB6802024F3EAAF00872D3D /* Protocols */,
 				4AB6801924EE97C000872D3D /* Auth */,
 				4A472D1C24CAD6B00089D812 /* General */,
 				4A472D1824CAD67E0089D812 /* New */,
@@ -411,6 +414,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		4AB6802024F3EAAF00872D3D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4AB6802324F3EAED00872D3D /* AnimatingNetrorkViewController.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		D1742551DDF47DA935FDE952 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +575,7 @@
 				4A472CE524C8492F0089D812 /* Colors.swift in Sources */,
 				4AB6801F24F3C89700872D3D /* NotificationName.swift in Sources */,
 				4AA5588024ED46260069F4FE /* ShowingFiles.swift in Sources */,
+				4AB6802424F3EAED00872D3D /* AnimatingNetrorkViewController.swift in Sources */,
 				4A472D1524CACC020089D812 /* MaterialsTableViewController.swift in Sources */,
 				4A472D0424C975DB0089D812 /* ApiManager.swift in Sources */,
 				4A104C8524E522EA00D5219A /* FileView.swift in Sources */,

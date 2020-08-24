@@ -14,7 +14,7 @@ class DetailMaterialViewController: UIViewController {
     // MARK: Scroll View
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = true
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
@@ -280,39 +280,29 @@ extension DetailMaterialViewController: ShowingFiles {
 }
 
 
-// MARK: - Network
-extension DetailMaterialViewController {
+// MARK: - Animating Network View Controller
+extension DetailMaterialViewController: AnimatingNetworkViewController {
     
-    // MARK: Activity Indicator
-    func startActivityIndicator() {
-        if !view.subviews.contains(activityIndicatorView) {
-            view.addSubview(activityIndicatorView)
-            activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-            activityIndicatorView.addConstraintsOnAllSides(to: view.safeAreaLayoutGuide, withConstant: 0)
+    func animatingSuperViewForDisplay() -> UIView {
+        return view
+    }
+    
+    func animatingViewForDisableUserInteraction() -> UIView {
+        if let tabBarController = tabBarController {
+            return tabBarController.view
+        } else if let navController = navigationController {
+            return navController.view
+        } else {
+            return view
         }
-        activityIndicatorView.startAnimating()
     }
     
-    func stopActivityIndicator() {
-        activityIndicatorView.stopAnimating()
+    func animatingActivityIndicatorView() -> ActivityIndicatorView {
+        return activityIndicatorView
     }
     
-    // MARK: Arert View
-    func showAlert(withText alertText: String) {
-        if !view.subviews.contains(alertView) {
-            view.addSubview(alertView)
-            
-            alertView.translatesAutoresizingMaskIntoConstraints = false
-            alertView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-            alertView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        }
-        
-        alertView.alertLabel.text = alertText
-        alertView.hideWithAnimation()
-    }
-    
-    func showNetworkAlert() {
-        showAlert(withText: "Проблемы с интернетом")
+    func animatingAlertView() -> AlertView {
+        return alertView
     }
     
 }

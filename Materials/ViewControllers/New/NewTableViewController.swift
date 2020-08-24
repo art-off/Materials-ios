@@ -15,6 +15,7 @@ class NewTableViewController: UITableViewController {
     var lastMonthMaterials: Results<Material>!
     var notLastMonthMaterials: Results<Material>!
     
+    // MARK: Animating
     let activityIndicatorView = ActivityIndicatorView()
     let alertView = AlertView()
     
@@ -76,7 +77,7 @@ class NewTableViewController: UITableViewController {
 }
 
 
-// MARK: Notification Center
+// MARK: - Notification Center
 extension NewTableViewController {
     
     func addNotificationCenter() {
@@ -188,45 +189,30 @@ extension NewTableViewController {
     
 }
 
-// MARK: - Animating
-extension NewTableViewController {
+
+// MARK: - Animating Network View Controller
+extension NewTableViewController: AnimatingNetworkViewController {
     
-    // MARK: Activity Indicator
-    func startActivityIndicator() {
-        if !view.subviews.contains(activityIndicatorView) {
-            view.addSubview(activityIndicatorView)
-            activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-            activityIndicatorView.addConstraintsOnAllSides(to: view.safeAreaLayoutGuide, withConstant: 0)
+    func animatingSuperViewForDisplay() -> UIView {
+        return view
+    }
+    
+    func animatingViewForDisableUserInteraction() -> UIView {
+        if let tabBarController = tabBarController {
+            return tabBarController.view
+        } else if let navController = navigationController {
+            return navController.view
+        } else {
+            return view
         }
-        activityIndicatorView.startAnimating()
-        //tableView.isScrollEnabled = false
-        //tableView.isUserInteractionEnabled = false
-        tabBarController?.view.isUserInteractionEnabled = false
     }
     
-    func stopActivityIndicator() {
-        activityIndicatorView.stopAnimating()
-        tabBarController?.view.isUserInteractionEnabled = true
-        //tableView.isUserInteractionEnabled = true
-        //tableView.isScrollEnabled = true
+    func animatingActivityIndicatorView() -> ActivityIndicatorView {
+        return activityIndicatorView
     }
     
-    // MARK: Alert View
-    func showAlert(withText alertText: String) {
-        if !view.subviews.contains(alertView) {
-            view.addSubview(alertView)
-            
-            alertView.translatesAutoresizingMaskIntoConstraints = false
-            alertView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-            alertView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        }
-        
-        alertView.alertLabel.text = alertText
-        alertView.hideWithAnimation()
-    }
-    
-    func showNetworkAlert() {
-        showAlert(withText: "Проблемы с интернетом")
+    func animatingAlertView() -> AlertView {
+        return alertView
     }
     
 }
