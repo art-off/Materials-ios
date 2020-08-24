@@ -15,6 +15,7 @@ class MaterialsTableViewController: UITableViewController {
     var section: String!
     var materials: Results<Material>!
     
+    // MARK: Animating
     let activityIndicatorView = ActivityIndicatorView()
     let alertView = AlertView()
     

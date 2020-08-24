@@ -9,12 +9,13 @@
 import UIKit
 import RealmSwift
 
-class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
+class SearchTableViewController: UITableViewController {
     
     // MARK: - Properties
     var materials: Results<Material>!
     private var filteredMaterials: Results<Material>!
     
+    // MARK: Animating
     let activityIndicatorView = ActivityIndicatorView()
     let alertView = AlertView()
     
@@ -29,6 +30,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     private var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
+    
 
     // MARK: - Overrides
     override func loadView() {
@@ -57,7 +59,8 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         tableView.reloadData()
     }
     
-    // MARK: - Setup search controller
+    // MARK: - Setup views
+    // MARK: Setup search controller
     func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -69,8 +72,13 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         // чтобы не скрывался при скролинге
         navigationItem.hidesSearchBarWhenScrolling = false
     }
+
+}
+
+
+// MARK: - Table view data source
+extension SearchTableViewController {
     
-    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering { return filteredMaterials.count }
         return materials.count
@@ -92,22 +100,6 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         return cell
     }
     
-    // MARK: - UI search results updating
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
-        
-        let namePredicate = "name CONTAINS[c] '\(searchText)'"
-        let sectionPredicate = "section CONTAINS[c] '\(searchText)'"
-        let datePredicate = "date CONTAINS[c] '\(searchText)'"
-        // сделать как-то поиск по ключевым словам
-        //let keywordPredicate = "\(searchText) IN {'ss', 'ff'}"
-        
-        let generalPredicate = "\(namePredicate) OR \(sectionPredicate) OR \(datePredicate)"
-        
-        filteredMaterials = materials.filter(generalPredicate)
-        tableView.reloadData()
-    }
-
 }
 
 
@@ -140,6 +132,27 @@ extension SearchTableViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
+    }
+    
+}
+
+
+// MARK: - UI search results updating
+extension SearchTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else { return }
+        
+        let namePredicate = "name CONTAINS[c] '\(searchText)'"
+        let sectionPredicate = "section CONTAINS[c] '\(searchText)'"
+        let datePredicate = "date CONTAINS[c] '\(searchText)'"
+        // сделать как-то поиск по ключевым словам
+        //let keywordPredicate = "\(searchText) IN {'ss', 'ff'}"
+        
+        let generalPredicate = "\(namePredicate) OR \(sectionPredicate) OR \(datePredicate)"
+        
+        filteredMaterials = materials.filter(generalPredicate)
+        tableView.reloadData()
     }
     
 }

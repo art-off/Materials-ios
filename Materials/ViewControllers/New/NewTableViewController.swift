@@ -19,6 +19,7 @@ class NewTableViewController: UITableViewController {
     let activityIndicatorView = ActivityIndicatorView()
     let alertView = AlertView()
     
+    
     // MARK: - Overrides
     override func loadView() {
         super.loadView()
@@ -72,20 +73,6 @@ class NewTableViewController: UITableViewController {
     // MARK: - IBActions
     @IBAction func downloadMaterials(_ sender: UIBarButtonItem) {
         _downloadMaterials()
-    }
-    
-}
-
-
-// MARK: - Notification Center
-extension NewTableViewController {
-    
-    func addNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
-    }
-    
-    @objc private func onDidUpdateMaterials() {
-        updateTableData()
     }
     
 }
@@ -213,6 +200,20 @@ extension NewTableViewController: AnimatingNetworkViewController {
     
     func animatingAlertView() -> AlertView {
         return alertView
+    }
+    
+}
+
+
+// MARK: - Notification Center
+extension NewTableViewController {
+    
+    func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
+    }
+    
+    @objc private func onDidUpdateMaterials() {
+        updateTableData()
     }
     
 }

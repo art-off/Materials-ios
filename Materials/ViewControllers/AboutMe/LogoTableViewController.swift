@@ -15,6 +15,7 @@ class LogoTableViewController: UITableViewController {
     // MARK: - Private properties
     private let imageView = UIImageView(image: UIImage(named: "logo"))
     
+    
     // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()

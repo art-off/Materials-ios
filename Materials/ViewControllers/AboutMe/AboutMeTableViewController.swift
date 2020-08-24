@@ -17,7 +17,6 @@ class AboutMeTableViewController: LogoTableViewController {
     var materials: [Material]!
     
     
-    
     // MARK: - Overrides
     override func loadView() {
         super.loadView()
@@ -62,20 +61,6 @@ class AboutMeTableViewController: LogoTableViewController {
         tableView.reloadData()
     }
 
-}
-
-
-// MARK: - Notification Center
-extension AboutMeTableViewController {
-    
-    func addNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
-    }
-    
-    @objc private func onDidUpdateMaterials() {
-        updateTableData()
-    }
-    
 }
 
 
@@ -142,3 +127,16 @@ extension AboutMeTableViewController {
     }
 }
 
+
+// MARK: - Notification Center
+extension AboutMeTableViewController {
+    
+    func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
+    }
+    
+    @objc private func onDidUpdateMaterials() {
+        updateTableData()
+    }
+    
+}

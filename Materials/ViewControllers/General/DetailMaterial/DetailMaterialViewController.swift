@@ -65,9 +65,8 @@ class DetailMaterialViewController: UIViewController {
     
     let testButton = CustomButton()
     
-    // MARK: ActivityIndicatorView
+    // MARK: Animating
     let activityIndicatorView = ActivityIndicatorView()
-    // MARK: Alert View
     let alertView = AlertView()
     
     // MARK: - Properties
@@ -116,6 +115,7 @@ class DetailMaterialViewController: UIViewController {
         
         configurateButton()
     }
+    
     
     // MARK: - Setup Views
     private func setupScrollView() {

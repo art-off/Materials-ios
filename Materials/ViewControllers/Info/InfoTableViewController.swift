@@ -47,20 +47,6 @@ class InfoTableViewController: UITableViewController {
 }
 
 
-// MARK: - Notification Center
-extension InfoTableViewController {
-    
-    func addNotificationCenter() {
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
-    }
-    
-    @objc private func onDidUpdateMaterials() {
-        updateTableData()
-    }
-    
-}
-
-
 // MARK: - Table view data source
 extension InfoTableViewController {
 
@@ -94,6 +80,20 @@ extension InfoTableViewController {
         vc.materials = materials
         vc.section = section
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+
+// MARK: - Notification Center
+extension InfoTableViewController {
+    
+    func addNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidUpdateMaterials), name: .didUpdateMaterials, object: nil)
+    }
+    
+    @objc private func onDidUpdateMaterials() {
+        updateTableData()
     }
     
 }
