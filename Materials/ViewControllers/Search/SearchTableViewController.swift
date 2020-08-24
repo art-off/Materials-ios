@@ -92,7 +92,16 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     // MARK: - UI search results updating
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text?.lowercased() else { return }
-        filteredMaterials = materials.filter("name CONTAINS[c] '\(searchText)' OR section CONTAINS[c] '\(searchText)' OR date CONTAINS[c] '\(searchText)'")
+        
+        let namePredicate = "name CONTAINS[c] '\(searchText)'"
+        let sectionPredicate = "section CONTAINS[c] '\(searchText)'"
+        let datePredicate = "date CONTAINS[c] '\(searchText)'"
+        // сделать как-то поиск по ключевым словам
+        //let keywordPredicate = "\(searchText) IN {'ss', 'ff'}"
+        
+        let generalPredicate = "\(namePredicate) OR \(sectionPredicate) OR \(datePredicate)"
+        
+        filteredMaterials = materials.filter(generalPredicate)
         tableView.reloadData()
     }
 
