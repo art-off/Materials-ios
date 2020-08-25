@@ -123,6 +123,16 @@ extension DataManager {
         }
     }
     
+    // MARK: - Add Materials to Done
+    func addDoneMaterial(toUser user: User, materialId: Int, materialDate: String) {
+        try? realm.write {
+            let doneMaterial = DoneMaterial()
+            doneMaterial.materialId = materialId
+            doneMaterial.doneDate = materialDate
+            user.materials.append(doneMaterial)
+        }
+    }
+    
 }
 
 // MARK: - Files

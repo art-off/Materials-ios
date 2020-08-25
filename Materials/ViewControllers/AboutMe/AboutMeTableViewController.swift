@@ -39,7 +39,12 @@ class AboutMeTableViewController: LogoTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addNotificationCenter()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         updateTableData()
     }

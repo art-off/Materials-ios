@@ -17,12 +17,14 @@ class SummarizingTestViewController: UIViewController {
     
     // MARK: - Properties
     var isWin: Bool!
+    var isUpload: Bool!
     
     // MARK: - Initialization
-    convenience init(isWin: Bool) {
+    convenience init(isWin: Bool, isUpload: Bool) {
         self.init()
         
         self.isWin = isWin
+        self.isUpload = isUpload
     }
     
     // MARK: - Overrides
@@ -33,6 +35,9 @@ class SummarizingTestViewController: UIViewController {
         
         if isWin {
             textLabel.text = "Тест пройден"
+            if !isUpload {
+                textLabel.text! += "\nНо не загружен на сервер (проблемы с интернетом)"
+            }
         } else {
             textLabel.text = "Тест не пройден\nПопробуйте снова"
         }

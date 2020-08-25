@@ -100,6 +100,56 @@ class ApiManager {
         task.resume()
     }
     
+    // MARK: - Add Material
+    static func addMaterial(withMaterialId materialId: Int, complition: @escaping (_ isDone: Bool) -> Void) {
+        let url = API.addMaterial()
+        
+        guard let currUserId = UserHelpers.getCurrUser()?.id else {
+            complition(false)
+            return
+        }
+        
+        let parameters = [
+            "secret": API.key,
+            "material_id": String(materialId),
+            "user_id": String(currUserId),
+            "material_date": DateHelper.getTodayDate()
+        ]
+        
+        let boundary = "Boundary-\(UUID().uuidString)"
+        let httpBody = httpBodyForMultipart(withParameters: parameters, boundary: boundary)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.httpBody = httpBody
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse,
+                // 404 отправляет, если уже есть такой материал
+                (200..<300).contains(httpResponse.statusCode) || httpResponse.statusCode == 404 else {
+                    complition(false)
+                    return
+            }
+            
+            guard data != nil else {
+                complition(false)
+                return
+            }
+            
+            // добавление прошло успешно
+            complition(true)
+            //if httpResponse.statusCode == 200 {
+            //    complition(true)
+            //} else {
+            //    complition(false)
+            //}
+        }
+        
+        task.resume()
+        
+    }
+    
     // MARK: - Files
     static func downloadFile(withFileName name: String, complition: @escaping (_ isDone: Bool) -> Void) {
         let url = API.download(fileName: name)

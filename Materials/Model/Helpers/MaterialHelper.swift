@@ -111,6 +111,11 @@ class MaterialHelper {
 // MARK: - Для работы с Тестами
 extension MaterialHelper {
     
-    
+    static func addMaterialToApiAndLocal(withMaterilaId materialId: Int, complition: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async {
+            UserHelpers.addDonaMaterialToCurrUser(materialId: materialId, materialDate: DateHelper.getTodayDate())
+        }
+        ApiManager.addMaterial(withMaterialId: materialId, complition: complition)
+    }
     
 }

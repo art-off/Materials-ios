@@ -19,12 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        MaterialHelper.loadAllMaterialsFromApiAndWriteInBD { isDone in
-//            print(isDone)
+//        UserHelpers.logoutCurrUser()
+//        ApiManager.authUser(withEmail: "tema2707@icloud.com", password: "1234") { user in
+//            guard let user = user else { return }
+//            DispatchQueue.main.async {
+//                UserHelpers.authUser(user: user)
+//            }
 //        }
-        
-        //FileHelper.getFilaNameWithTxtFromDoc(fileName: "1(0).docx")
-        
+//        
         
         return true
     }

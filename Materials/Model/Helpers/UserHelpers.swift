@@ -26,6 +26,18 @@ class UserHelpers {
         return optionalUser
     }
     
+    static func addDonaMaterialToCurrUser(materialId: Int, materialDate: String) {
+        guard let currUser = getCurrUser() else { return }
+        
+        // Если он уже добавлен, то выходим
+        for doneMaterial in currUser.materials {
+            if doneMaterial.materialId == materialId {
+                return
+            }
+        }
+        DataManager.shared.addDoneMaterial(toUser: currUser, materialId: materialId, materialDate: materialDate)
+    }
+    
     
     private static func deleteAllUsers() {
         let users = DataManager.shared.getUsers()

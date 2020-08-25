@@ -207,7 +207,7 @@ class DetailMaterialViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func onTestButtonTapped() {
-        let testVC = TestViewController(tests: Array(material.tests))
+        let testVC = TestViewController(tests: Array(material.tests), materialId: material.id)
         navigationController?.pushViewController(testVC, animated: true)
     }
 

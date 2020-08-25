@@ -11,6 +11,7 @@ import UIKit
 class TestViewController: UITableViewController {
     
     // MARK: - Properties
+    var materialId: Int!
     private var tests: [Test]!
     private var sections: [String]!
 
@@ -21,12 +22,17 @@ class TestViewController: UITableViewController {
     
     private var countCorrectAnswers: Int!
     
+    // MARK: Animating
+    let activityIndicatorView = ActivityIndicatorView()
+    let alertView = AlertView()
+    
     
     // MARK: - Initizlization
-    convenience init(tests: [Test]) {
+    convenience init(tests: [Test], materialId: Int) {
         self.init()
         
         self.tests = tests
+        self.materialId = materialId
     }
     
     
@@ -83,13 +89,30 @@ class TestViewController: UITableViewController {
     private func summarizingTest() {
         let isWin = (countCorrectAnswers == tests.count)
         
-        let vc = SummarizingTestViewController(isWin: isWin)
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.startActivityIndicator()
+        }
         
-        // переносимся на начальный экран
-        navigationController?.popToRootViewController(animated: false)
+        if isWin {
+            MaterialHelper.addMaterialToApiAndLocal(withMaterilaId: materialId) { isDone in
+                DispatchQueue.main.async {
+                    self.stopActivityIndicator()
+                    
+                    let vc = SummarizingTestViewController(isWin: isWin, isUpload: isDone)
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    self.present(vc, animated: true, completion: nil)
+                    
+                    // переносимся на начальный экран
+                    self.navigationController?.popToRootViewController(animated: false)
+                }
+            }
+        } else {
+            let vc = SummarizingTestViewController(isWin: isWin, isUpload: false)
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 
 }
@@ -156,9 +179,37 @@ extension TestViewController {
         // если вопросы кончились - подводим итоги
         if currTestNumber + 1 == tests.count {
             summarizingTest()
+            return
         }
         
         updateCurrTest()
+    }
+    
+}
+
+// MARK: - Animating Network View Controller
+extension TestViewController: AnimatingNetworkViewController {
+    
+    func animatingSuperViewForDisplay() -> UIView {
+        return view
+    }
+    
+    func animatingViewForDisableUserInteraction() -> UIView {
+        if let tabBarController = tabBarController {
+            return tabBarController.view
+        } else if let navController = navigationController {
+            return navController.view
+        } else {
+            return view
+        }
+    }
+    
+    func animatingActivityIndicatorView() -> ActivityIndicatorView {
+        return activityIndicatorView
+    }
+    
+    func animatingAlertView() -> AlertView {
+        return alertView
     }
     
 }
