@@ -207,7 +207,8 @@ class DetailMaterialViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func onTestButtonTapped() {
-        showNetworkAlert()
+        let testVC = TestViewController(tests: Array(material.tests))
+        navigationController?.pushViewController(testVC, animated: true)
     }
 
 }

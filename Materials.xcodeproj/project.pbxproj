@@ -53,7 +53,6 @@
 		4A5B003E24CCD7AF00786B9E /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B003D24CCD7AF00786B9E /* String+md5.swift */; };
 		4AA5588024ED46260069F4FE /* ShowingFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5587F24ED46260069F4FE /* ShowingFiles.swift */; };
 		4AB6801724EE8FED00872D3D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801524EE8FEC00872D3D /* TestViewController.swift */; };
-		4AB6801824EE8FED00872D3D /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801624EE8FED00872D3D /* TestViewController.xib */; };
 		4AB6801C24EE97D300872D3D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801A24EE97D300872D3D /* AuthViewController.swift */; };
 		4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801B24EE97D300872D3D /* AuthViewController.xib */; };
 		4AB6801F24F3C89700872D3D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801E24F3C89700872D3D /* NotificationName.swift */; };
@@ -109,7 +108,6 @@
 		4A5B003D24CCD7AF00786B9E /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		4AA5587F24ED46260069F4FE /* ShowingFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingFiles.swift; sourceTree = "<group>"; };
 		4AB6801524EE8FEC00872D3D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		4AB6801624EE8FED00872D3D /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		4AB6801A24EE97D300872D3D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4AB6801B24EE97D300872D3D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		4AB6801E24F3C89700872D3D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
@@ -400,7 +398,6 @@
 				4AA5587E24ED45F80069F4FE /* Protocols */,
 				4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */,
 				4AB6801524EE8FEC00872D3D /* TestViewController.swift */,
-				4AB6801624EE8FED00872D3D /* TestViewController.xib */,
 			);
 			path = DetailMaterial;
 			sourceTree = "<group>";
@@ -497,7 +494,6 @@
 				4A472CFB24C8C43D0089D812 /* MaterialViewCell.xib in Resources */,
 				4A472CDA24C8425D0089D812 /* LaunchScreen.storyboard in Resources */,
 				4A472CD724C8425D0089D812 /* Assets.xcassets in Resources */,
-				4AB6801824EE8FED00872D3D /* TestViewController.xib in Resources */,
 				4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */,
 				4A472D1224CABFB20089D812 /* LabelViewCell.xib in Resources */,
 				4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */,
