@@ -106,3 +106,11 @@ class MaterialHelper {
     }
     
 }
+
+
+// MARK: - Для работы с Тестами
+extension MaterialHelper {
+    
+    
+    
+}

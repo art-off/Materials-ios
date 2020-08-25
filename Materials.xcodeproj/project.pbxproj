@@ -57,6 +57,8 @@
 		4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6801B24EE97D300872D3D /* AuthViewController.xib */; };
 		4AB6801F24F3C89700872D3D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6801E24F3C89700872D3D /* NotificationName.swift */; };
 		4AB6802424F3EAED00872D3D /* AnimatingNetrorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6802324F3EAED00872D3D /* AnimatingNetrorkViewController.swift */; };
+		4AB6802724F4E06800872D3D /* SummarizingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6802524F4E06800872D3D /* SummarizingTestViewController.swift */; };
+		4AB6802824F4E06800872D3D /* SummarizingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6802624F4E06800872D3D /* SummarizingTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		4AB6801B24EE97D300872D3D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		4AB6801E24F3C89700872D3D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		4AB6802324F3EAED00872D3D /* AnimatingNetrorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingNetrorkViewController.swift; sourceTree = "<group>"; };
+		4AB6802524F4E06800872D3D /* SummarizingTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizingTestViewController.swift; sourceTree = "<group>"; };
+		4AB6802624F4E06800872D3D /* SummarizingTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummarizingTestViewController.xib; sourceTree = "<group>"; };
 		DC9180CF77E51FC3F7CA11F0 /* Pods-Materials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.release.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.release.xcconfig"; sourceTree = "<group>"; };
 		E4889D491F3D3A938C6DA091 /* Pods-Materials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Materials.debug.xcconfig"; path = "Target Support Files/Pods-Materials/Pods-Materials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -398,6 +402,8 @@
 				4AA5587E24ED45F80069F4FE /* Protocols */,
 				4A104C7B24DD5AF500D5219A /* DetailMaterialViewController.swift */,
 				4AB6801524EE8FEC00872D3D /* TestViewController.swift */,
+				4AB6802524F4E06800872D3D /* SummarizingTestViewController.swift */,
+				4AB6802624F4E06800872D3D /* SummarizingTestViewController.xib */,
 			);
 			path = DetailMaterial;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */,
 				4A472D1224CABFB20089D812 /* LabelViewCell.xib in Resources */,
 				4AB6801D24EE97D300872D3D /* AuthViewController.xib in Resources */,
+				4AB6802824F4E06800872D3D /* SummarizingTestViewController.xib in Resources */,
 				4A472CD524C8425A0089D812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +592,7 @@
 				4A472D0224C9733C0089D812 /* API.swift in Sources */,
 				4A472D0824C984D80089D812 /* DataManager.swift in Sources */,
 				4A472CF324C86D330089D812 /* Common.swift in Sources */,
+				4AB6802724F4E06800872D3D /* SummarizingTestViewController.swift in Sources */,
 				4A5B003B24CCD06300786B9E /* User.swift in Sources */,
 				4A104C7524D58FEB00D5219A /* CustomHeader.swift in Sources */,
 				4AB6801724EE8FED00872D3D /* TestViewController.swift in Sources */,

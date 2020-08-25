@@ -83,10 +83,13 @@ class TestViewController: UITableViewController {
     private func summarizingTest() {
         let isWin = (countCorrectAnswers == tests.count)
         
+        let vc = SummarizingTestViewController(isWin: isWin)
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
         
-        
-        // тут какуюнибудь вью показать об итогах
-        navigationController?.popToRootViewController(animated: true)
+        // переносимся на начальный экран
+        navigationController?.popToRootViewController(animated: false)
     }
 
 }
@@ -145,14 +148,14 @@ extension TestViewController {
         // только для ответов
         guard indexPath.section == 1 else { return }
         
-        // если вопросы кончились - подводим итоги
-        if currTestNumber + 1 == tests.count {
-            summarizingTest()
-        }
-        
         // + 1 потому что нумерация правильного ответа с 1
         if currCorrectAnswer == indexPath.row + 1 {
             countCorrectAnswers += 1
+        }
+        
+        // если вопросы кончились - подводим итоги
+        if currTestNumber + 1 == tests.count {
+            summarizingTest()
         }
         
         updateCurrTest()
