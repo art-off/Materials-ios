@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuickLook
 
 class DetailMaterialViewController: UIViewController {
     
@@ -74,6 +75,9 @@ class DetailMaterialViewController: UIViewController {
     private var materialText: String!
     
     private var docOpener: UIDocumentInteractionController!
+    
+    private var filePreviewController: QLPreviewController!
+    private var previewItem: URL!
     
     // MARK: - Initialization
     convenience init(material: Material, materialText: String) {
@@ -220,8 +224,8 @@ extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate 
     private func _showDoc(withName fileName: String) {
         startActivityIndicator()
         
-        let fileURL = DataManager.shared.getFilesDirectoryUrl()
-            .appendingPathComponent(fileName)
+        // TODO: Тут предупреждение
+        let fileURL = FileHelper.getUrl(forFileName: fileName)
         
         if !FileManager.default.fileExists(atPath: fileURL.path) {
             ApiManager.downloadFile(withFileName: fileName) { isDone in
@@ -266,7 +270,10 @@ extension DetailMaterialViewController: ShowingFiles {
         _showDoc(withName: fileName)
     }
     
-    func showImage(withName: String) {
+    func showImage(withName fileName: String) {
+        filePreviewController = QLPreviewController()
+        filePreviewController.dataSource = self
+        previewItem = FileHelper.getUrl(forFileName: fileName)
         
     }
     
@@ -306,4 +313,18 @@ extension DetailMaterialViewController: AnimatingNetworkViewController {
         return alertView
     }
     
+}
+
+
+// MARK: - QL Preview Controller Data Source
+extension DetailMaterialViewController: QLPreviewControllerDataSource {
+
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        return previewItem as QLPreviewItem
+    }
+
 }

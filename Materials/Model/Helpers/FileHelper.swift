@@ -42,6 +42,14 @@ class FileHelper {
         return name + ".txt"
     }
     
+    // MARK: - Get file url
+    static func getUrl(forFileName fileName: String) -> URL {
+        let fileURL = DataManager.shared.getFilesDirectoryUrl()
+            .appendingPathComponent(fileName)
+        
+        return fileURL
+    }
+    
     // MARK: - Для работы с API
     static func getTxtFileTextFromApiOrLocal(withName fileName: String, complition: @escaping (String?) -> Void) {
         ApiManager.downloadFile(withFileName: fileName) { isDone in
@@ -59,8 +67,7 @@ class FileHelper {
     }
     
     private static func getTxtFileTextFromLocal(withname fileName: String, complition: @escaping (String?) -> Void) {
-        let fileUrl = DataManager.shared.getFilesDirectoryUrl()
-            .appendingPathComponent(fileName)
+        let fileUrl = getUrl(forFileName: fileName)
         
         let text = try? String(contentsOf: fileUrl, encoding: .utf8)
         complition(text)

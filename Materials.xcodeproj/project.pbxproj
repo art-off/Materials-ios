@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A02FD57D5D1399081C6ECC2 /* Pods_Materials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */; };
 		4A104C6C24D55EDD00D5219A /* LogoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */; };
 		4A104C6F24D55FEF00D5219A /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A104C6D24D55FEF00D5219A /* UserViewCell.swift */; };
 		4A104C7024D55FEF00D5219A /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A104C6E24D55FEF00D5219A /* UserViewCell.xib */; };
@@ -60,10 +59,11 @@
 		4AB6802A24F5090F00872D3D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6802924F5090F00872D3D /* DateHelper.swift */; };
 		4AB6802D24F5A3C500872D3D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6802B24F5A3C500872D3D /* AuthViewController.swift */; };
 		4AB6802E24F5A3C500872D3D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AB6802C24F5A3C500872D3D /* AuthViewController.xib */; };
+		88AE34455793554DBD44AA06 /* libPods-Materials.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15793E8D71B98FA32AAB9AF0 /* libPods-Materials.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Materials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15793E8D71B98FA32AAB9AF0 /* libPods-Materials.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Materials.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A104C6B24D55EDD00D5219A /* LogoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTableViewController.swift; sourceTree = "<group>"; };
 		4A104C6D24D55FEF00D5219A /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		4A104C6E24D55FEF00D5219A /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A02FD57D5D1399081C6ECC2 /* Pods_Materials.framework in Frameworks */,
+				88AE34455793554DBD44AA06 /* libPods-Materials.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 		487005A554ED15D66ED90240 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3D11AAE7E046B2D574D0CEA8 /* Pods_Materials.framework */,
+				15793E8D71B98FA32AAB9AF0 /* libPods-Materials.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -448,7 +448,6 @@
 				4A472CC624C8425A0089D812 /* Sources */,
 				4A472CC724C8425A0089D812 /* Frameworks */,
 				4A472CC824C8425A0089D812 /* Resources */,
-				2C4C058F5FA2F4C94747CD64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -514,23 +513,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C4C058F5FA2F4C94747CD64 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Materials/Pods-Materials-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Materials/Pods-Materials-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Materials/Pods-Materials-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		75857471894FEF75346B0370 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

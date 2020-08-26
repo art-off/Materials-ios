@@ -85,8 +85,27 @@ class FileView: UIView {
         if isDocFile {
             delegate?.showDoc(withName: fileName)
         } else {
-            // тут обрабатывать файлы другого расширения
+            let ext = FileHelper.getFileExtension(fileName: fileName)
+            
+            if ext == "jpg" || ext == "jpeg" || ext == "png" {
+                delegate?.showImage(withName: fileName)
+            } else if ext == "mp4" {
+                delegate?.showVideo(withName: fileName)
+            } else if ext == "mp3" {
+                delegate?.showAudio(withName: fileName)
+            }
         }
     }
+    
+    // Только png, jpg, jpeg, mp3, gif, mp4
+    
+    // png
+    // jpg
+    // gif
+    
+    // mp3
+    // mp4
+    
+    // docx
 
 }

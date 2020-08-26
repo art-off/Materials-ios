@@ -161,8 +161,7 @@ class ApiManager {
     static func downloadFile(withFileName name: String, complition: @escaping (_ isDone: Bool) -> Void) {
         let url = API.download(fileName: name)
         
-        let fileUrl = DataManager.shared.getFilesDirectoryUrl()
-            .appendingPathComponent(name)
+        let fileUrl = FileHelper.getUrl(forFileName: name)
         
         let task = URLSession.shared.downloadTask(with: url) { tempLocalUrl, response, error in
             guard let httpResponse = response as? HTTPURLResponse,

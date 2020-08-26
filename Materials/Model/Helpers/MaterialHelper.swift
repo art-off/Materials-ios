@@ -112,10 +112,15 @@ class MaterialHelper {
 extension MaterialHelper {
     
     static func addMaterialToApiAndLocal(withMaterilaId materialId: Int, complition: @escaping (Bool) -> Void) {
-        DispatchQueue.main.async {
-            UserHelpers.addDonaMaterialToCurrUser(materialId: materialId, materialDate: DateHelper.getTodayDate())
+        ApiManager.addMaterial(withMaterialId: materialId) { isDone in
+            // Если отправилось на сервер, то и добавляем в локальный
+            if isDone {
+                DispatchQueue.main.async {
+                    UserHelpers.addDonaMaterialToCurrUser(materialId: materialId, materialDate: DateHelper.getTodayDate())
+                }
+            }
+            complition(isDone)
         }
-        ApiManager.addMaterial(withMaterialId: materialId, complition: complition)
     }
     
 }

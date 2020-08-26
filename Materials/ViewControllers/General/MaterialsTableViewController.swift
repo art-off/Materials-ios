@@ -78,6 +78,7 @@ extension MaterialsTableViewController {
             DispatchQueue.main.async {
                 guard let text = text else {
                     self.showNetworkAlert()
+                    self.stopActivityIndicator()
                     return
                 }
                 
