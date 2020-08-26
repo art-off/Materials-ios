@@ -89,6 +89,8 @@ class FileView: UIView {
             
             if ext == "jpg" || ext == "jpeg" || ext == "png" {
                 delegate?.showImage(withName: fileName)
+            } else if ext == "gif" {
+                delegate?.showImage(withName: fileName)
             } else if ext == "mp4" {
                 delegate?.showVideo(withName: fileName)
             } else if ext == "mp3" {
@@ -98,13 +100,6 @@ class FileView: UIView {
     }
     
     // Только png, jpg, jpeg, mp3, gif, mp4
-    
-    // png
-    // jpg
-    // gif
-    
-    // mp3
-    // mp4
     
     // docx
 

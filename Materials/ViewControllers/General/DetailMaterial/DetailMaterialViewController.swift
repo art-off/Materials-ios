@@ -74,8 +74,7 @@ class DetailMaterialViewController: UIViewController {
     private var material: Material!
     private var materialText: String!
     
-    private var docOpener: UIDocumentInteractionController!
-    
+    // MARK: Show Files
     private var filePreviewController: QLPreviewController!
     private var previewItem: URL!
     
@@ -218,22 +217,22 @@ class DetailMaterialViewController: UIViewController {
 }
 
 
-// MARK: - All For Preview DOCX
-extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate {
+// MARK: - Showing files
+extension DetailMaterialViewController: ShowingFiles {
     
-    private func _showDoc(withName fileName: String) {
+    private func showAnyFile(withName fileName: String) {
         startActivityIndicator()
         
-        // TODO: Тут предупреждение
-        let fileURL = FileHelper.getUrl(forFileName: fileName)
+        filePreviewController = QLPreviewController()
+        filePreviewController.dataSource = self
+        previewItem = FileHelper.getUrl(forFileName: fileName)
         
-        if !FileManager.default.fileExists(atPath: fileURL.path) {
+        if !FileManager.default.fileExists(atPath: previewItem.path) {
             ApiManager.downloadFile(withFileName: fileName) { isDone in
                 DispatchQueue.main.async {
                     if isDone {
-                        self.docOpener = UIDocumentInteractionController.init(url: fileURL)
-                        self.docOpener.delegate = self
-                        self.docOpener.presentPreview(animated: true)
+                        self.filePreviewController.reloadData()
+                        self.present(self.filePreviewController, animated: true, completion: nil)
                     } else {
                         self.showNetworkAlert()
                     }
@@ -241,48 +240,26 @@ extension DetailMaterialViewController: UIDocumentInteractionControllerDelegate 
                 }
             }
         } else {
-            docOpener = UIDocumentInteractionController.init(url: fileURL)
-            docOpener.delegate = self
-            docOpener.presentPreview(animated: true)
+            filePreviewController.reloadData()
+            present(self.filePreviewController, animated: true, completion: nil)
             stopActivityIndicator()
         }
     }
     
-    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
-        return self
-    }
-
-    func documentInteractionControllerViewForPreview(_ controller: UIDocumentInteractionController) -> UIView? {
-        return self.view
-    }
-
-    func documentInteractionControllerRectForPreview(_ controller: UIDocumentInteractionController) -> CGRect {
-        return self.view.frame
-    }
-    
-}
-
-
-// MARK: - Showing files
-extension DetailMaterialViewController: ShowingFiles {
-    
     func showDoc(withName fileName: String) {
-        _showDoc(withName: fileName)
+        showAnyFile(withName: fileName)
     }
     
     func showImage(withName fileName: String) {
-        filePreviewController = QLPreviewController()
-        filePreviewController.dataSource = self
-        previewItem = FileHelper.getUrl(forFileName: fileName)
-        
+        showAnyFile(withName: fileName)
     }
     
-    func showVideo(withName: String) {
-        
+    func showVideo(withName fileName: String) {
+        showAnyFile(withName: fileName)
     }
     
-    func showAudio(withName: String) {
-        
+    func showAudio(withName fileName: String) {
+        showAnyFile(withName: fileName)
     }
     
 }
