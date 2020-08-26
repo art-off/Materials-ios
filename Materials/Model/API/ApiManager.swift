@@ -39,7 +39,7 @@ class ApiManager {
     }
     
     // MARK: - Auth
-    static func authUser(withEmail email: String, password: String, complition: @escaping (User?) -> Void) {
+    static func authUser(withEmail email: String, password: String, complition: @escaping (User?, _ isWrongLoginOrPassword: Bool) -> Void) {
         let url = API.getUser()
         
         let parameters = [
@@ -57,15 +57,22 @@ class ApiManager {
         request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse,
-                (200..<300).contains(httpResponse.statusCode) else {
-                    // тут прописать если 403 (неверный логин или пароль) то дать другую ошибку
-                    complition(nil)
-                    return
+            guard let httpResponse = response as? HTTPURLResponse else {
+                complition(nil, false)
+                return
+            }
+            
+            if httpResponse.statusCode == 403 {
+                complition(nil, true)
+            }
+            
+            guard (200..<300).contains(httpResponse.statusCode) else {
+                complition(nil, false)
+                return
             }
             
             guard let data = data else {
-                complition(nil)
+                complition(nil, false)
                 return
             }
             
@@ -90,10 +97,10 @@ class ApiManager {
                     }
                 }
                 
-                complition(user)
+                complition(user, false)
             } catch let jsonError {
                 print(jsonError)
-                complition(nil)
+                complition(nil, false)
             }
         }
         

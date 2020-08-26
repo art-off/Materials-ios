@@ -66,6 +66,11 @@ class AboutMeTableViewController: LogoTableViewController {
         tableView.reloadData()
     }
 
+    @IBAction func onLogoutPress(_ sender: Any) {
+        UserHelpers.logoutCurrUser()
+        UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+    }
+    
 }
 
 

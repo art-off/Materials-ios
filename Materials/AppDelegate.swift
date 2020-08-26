@@ -18,15 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
         
-//        UserHelpers.logoutCurrUser()
-//        ApiManager.authUser(withEmail: "tema2707@icloud.com", password: "1234") { user in
-//            guard let user = user else { return }
-//            DispatchQueue.main.async {
-//                UserHelpers.authUser(user: user)
-//            }
-//        }
-//        
+        if UserHelpers.isUserAuth() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+            window?.rootViewController = mainTabBarController
+        } else {
+            let authVC = AuthViewController()
+            window?.rootViewController = authVC
+        }
+        
+        window?.makeKeyAndVisible()
         
         return true
     }

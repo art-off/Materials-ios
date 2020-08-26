@@ -10,7 +10,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="019-9b-hdK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JYF-pL-gWq" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="JYF-pL-gWq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o0q-JQ-AiS">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -181,7 +181,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Обо мне" id="Klh-oD-PLK">
-                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="0Ce-0W-cVl"/>
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="0Ce-0W-cVl">
+                            <connections>
+                                <action selector="onLogoutPress:" destination="l9a-Cn-EIn" id="JeW-Mn-RE8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqc-th-pez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

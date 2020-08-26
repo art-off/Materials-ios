@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthViewController" customModule="Materials" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="ucF-eZ-sEU" id="c8E-yb-mOo"/>
+                <outlet property="passwordTextFiels" destination="0vE-fb-fjg" id="b1q-22-Psa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,68 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gGa-cJ-Lc5">
+                    <rect key="frame" x="157" y="64" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="ZE4-RJ-BDJ"/>
+                        <constraint firstAttribute="height" constant="100" id="tfo-Zl-A2c"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Транснефть-Материалы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jak-0U-bqk">
+                    <rect key="frame" x="72" y="172" width="270" height="28"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucF-eZ-sEU">
+                    <rect key="frame" x="20" y="220" width="374" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="j2a-dr-aaE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-fb-fjg">
+                    <rect key="frame" x="20" y="280" width="374" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4yf-d6-4p9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgg-Ve-4wA" customClass="CustomButton" customModule="Materials" customModuleProvider="target">
+                    <rect key="frame" x="20" y="340" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="xWL-Yr-WLC"/>
+                    </constraints>
+                    <state key="normal" title="Войти"/>
+                    <connections>
+                        <action selector="onSingInTapped:" destination="-1" eventType="touchUpInside" id="gY8-EE-IuJ"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qgg-Ve-4wA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1of-4g-bJt"/>
+                <constraint firstItem="ucF-eZ-sEU" firstAttribute="top" secondItem="jak-0U-bqk" secondAttribute="bottom" constant="20" id="9Pd-1S-6oF"/>
+                <constraint firstItem="jak-0U-bqk" firstAttribute="top" secondItem="gGa-cJ-Lc5" secondAttribute="bottom" constant="8" id="CQq-tl-sfB"/>
+                <constraint firstItem="gGa-cJ-Lc5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pz8-S9-Gg9"/>
+                <constraint firstItem="0vE-fb-fjg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="QJf-Fn-eRH"/>
+                <constraint firstItem="0vE-fb-fjg" firstAttribute="top" secondItem="ucF-eZ-sEU" secondAttribute="bottom" constant="20" id="Qvd-PH-T8f"/>
+                <constraint firstItem="gGa-cJ-Lc5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="WTy-5y-L74"/>
+                <constraint firstItem="qgg-Ve-4wA" firstAttribute="top" secondItem="0vE-fb-fjg" secondAttribute="bottom" constant="20" id="a8s-3l-frs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ucF-eZ-sEU" secondAttribute="trailing" constant="20" id="c0V-dR-F7t"/>
+                <constraint firstItem="ucF-eZ-sEU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="e62-Pa-Big"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qgg-Ve-4wA" secondAttribute="trailing" constant="20" id="mnW-bW-vXp"/>
+                <constraint firstItem="jak-0U-bqk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x7d-MC-dga"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0vE-fb-fjg" secondAttribute="trailing" constant="20" id="yVY-bh-766"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+            <point key="canvasLocation" x="140.57971014492756" y="135.9375"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo" width="177" height="176"/>
+    </resources>
 </document>

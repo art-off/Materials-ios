@@ -26,6 +26,10 @@ class UserHelpers {
         return optionalUser
     }
     
+    static func isUserAuth() -> Bool {
+        return getCurrUser() != nil
+    }
+    
     static func addDonaMaterialToCurrUser(materialId: Int, materialDate: String) {
         guard let currUser = getCurrUser() else { return }
         
