@@ -50,6 +50,31 @@ class FileHelper {
         return fileURL
     }
     
+    // MARK: - Remove files
+    static func removeFile(withUrl fileUrl: URL) {
+        try? FileManager.default.removeItem(at: fileUrl)
+    }
+    
+    static func removeAllFiles(fromMaterial material: Material) {
+        guard let files = material.files else { return }
+        
+        var filesToRemove = [URL]()
+        
+        let docFile = files.doc
+        guard let txtFile = getFilaNameWithTxtFromDoc(fileName: docFile) else { return }
+        
+        filesToRemove.append(getUrl(forFileName: txtFile))
+        filesToRemove.append(getUrl(forFileName: docFile))
+        
+        for addFile in files.add {
+            filesToRemove.append(getUrl(forFileName: addFile))
+        }
+        
+        for fileToRemove in filesToRemove {
+            removeFile(withUrl: fileToRemove)
+        }
+    }
+    
     // MARK: - Для работы с API
     static func getTxtFileTextFromApiOrLocal(withName fileName: String, complition: @escaping (String?) -> Void) {
         ApiManager.downloadFile(withFileName: fileName) { isDone in

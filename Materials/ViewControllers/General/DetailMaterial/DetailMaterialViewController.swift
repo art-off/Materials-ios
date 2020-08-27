@@ -117,6 +117,7 @@ class DetailMaterialViewController: UIViewController {
         }
         
         configurateButton()
+        configurateBarButtons()
     }
     
     
@@ -208,10 +209,19 @@ class DetailMaterialViewController: UIViewController {
         testButton.addTarget(self, action: #selector(onTestButtonTapped), for: .touchUpInside)
     }
     
+    private func configurateBarButtons() {
+        let removeBarButtonItem = UIBarButtonItem(title: "Удалить файлы", style: .plain, target: self, action: #selector(onRemoveBarButtonTapped))
+        navigationItem.rightBarButtonItem = removeBarButtonItem
+    }
+    
     // MARK: - Actions
     @objc private func onTestButtonTapped() {
         let testVC = TestViewController(tests: Array(material.tests), materialId: material.id)
         navigationController?.pushViewController(testVC, animated: true)
+    }
+    
+    @objc private func onRemoveBarButtonTapped() {
+        FileHelper.removeAllFiles(fromMaterial: material)
     }
 
 }

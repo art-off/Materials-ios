@@ -132,6 +132,11 @@ class ApiManager {
         request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                complition(false)
+                return
+            }
+            
             guard let httpResponse = response as? HTTPURLResponse,
                 // 404 отправляет, если уже есть такой материал
                 (200..<300).contains(httpResponse.statusCode) || httpResponse.statusCode == 404 else {
