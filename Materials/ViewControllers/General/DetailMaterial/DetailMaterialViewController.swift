@@ -222,6 +222,7 @@ class DetailMaterialViewController: UIViewController {
     
     @objc private func onRemoveBarButtonTapped() {
         FileHelper.removeAllFiles(fromMaterial: material)
+        navigationController?.popToRootViewController(animated: true)
     }
 
 }
