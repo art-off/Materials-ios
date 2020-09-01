@@ -108,10 +108,15 @@ class TestViewController: UITableViewController {
                 }
             }
         } else {
+            stopActivityIndicator()
+            
             let vc = SummarizingTestViewController(isWin: isWin, isUpload: false)
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
+            
+            // переносимся на начальный экран
+            self.navigationController?.popToRootViewController(animated: false)
         }
     }
 
